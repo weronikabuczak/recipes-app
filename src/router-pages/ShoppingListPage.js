@@ -1,4 +1,7 @@
 const ShoppingListPage = () => {
+    return (
+        <div>Shopping List</div>
+    )
 
 }
 

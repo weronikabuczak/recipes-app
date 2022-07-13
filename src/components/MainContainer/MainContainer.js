@@ -1,14 +1,13 @@
 import {Fragment} from "react";
-import Header from "./Header/Header";
 import classes from './MainContainer.module.css';
 import NavigationBar from "./NavigationBar";
 
-const MainContainer = () => {
+const MainContainer = (props) => {
     return (
         <Fragment>
+            <NavigationBar/>
             <div className={classes.main}>
-                <NavigationBar/>
-                <Header/>
+                {props.children}
             </div>
         </Fragment>
     )

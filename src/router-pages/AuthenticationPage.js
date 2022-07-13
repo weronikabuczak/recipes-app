@@ -1,3 +1,4 @@
-const AuthenticationPage = () => {}
+const AuthenticationPage = () => {
+}
 
 export default AuthenticationPage;
