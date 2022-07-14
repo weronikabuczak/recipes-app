@@ -5,7 +5,7 @@ const NavigationBar = () => {
     return (
         <header className={classes.header}>
             <Link to='/home'>
-                <div className={classes.title}>Title</div>
+                <div className={classes.title}>Recipes App</div>
             </Link>
             <nav>
                 <ul>
@@ -17,6 +17,9 @@ const NavigationBar = () => {
                     </li>
                     <li>
                         <Link to='/shopping'>Shopping</Link>
+                    </li>
+                    <li>
+                        <Link to='/auth'>Login</Link>
                     </li>
                 </ul>
             </nav>

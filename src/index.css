@@ -5,12 +5,13 @@
 html {
   font-family: 'Lato', sans-serif;
   background-color: white;
-  padding: 2rem;
+  padding: 0.5rem 2rem 2rem;
 }
 
 body {
   margin: 0;
-  background-color: #FFC5A1;
-  padding: 0 2rem 15rem;
+  /*background-color: #FAB49B;*/
+  padding: 0.7rem 2rem 18rem;
+  background-image: linear-gradient(to right, #f8bda8, rgba(241, 88, 88, 0.93));
   border-radius: 2rem;
 }

@@ -1,18 +1,18 @@
 .input {
     text-align: center;
+    margin: 0.8rem;
 }
 
 .input input {
     border-radius: 30px;
-    border: 1px solid #f3efef;
-    height: 2rem;
-    text-align: center;
+    border: 1px solid #ead6d6;
+    height: 2.5rem;
     width: 93%;
-    /*box-shadow: #c8c8cb 1px 1px 1px 1px;*/
+    padding-left: 3%;
 }
 
 .input input:focus, .input input:active {
-    outline: 2px #969296 solid;
+    outline: 1px #969296 solid;
 }
 
 .input label {
