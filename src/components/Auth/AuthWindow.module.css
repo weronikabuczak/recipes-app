@@ -4,6 +4,21 @@
     padding: 2rem;
     border-radius: 20px;
     text-align: center;
+    align-items: center;
     background-color: #F9F9F9;
 }
+
+.auth header {
+    font-size: 1.3rem;
+}
+
+.error {
+    padding: 1rem;
+    border-radius: 2rem;
+    background-color: #efefef;
+    border: #e5b8b2 1px solid;
+    box-shadow: 0 0 3px 1px #e5b8b2;
+}
+
+
 
