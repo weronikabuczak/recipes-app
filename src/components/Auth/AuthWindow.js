@@ -3,6 +3,7 @@ import CustomButton from "../../UI/CustomButton";
 import {useRef, useState} from "react";
 import CustomInput from "../../UI/CustomInput";
 import LoadingSpinner from "../../UI/LoadingSpinner";
+import {logDOM} from "@testing-library/react";
 
 const AuthWindow = () => {
     const [isLoginWindow, setIsLoginWindow] = useState();
@@ -15,39 +16,47 @@ const AuthWindow = () => {
     };
 
     const submitHandler = (e) => {
+        setError(null);
         e.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
+        let url;
 
         if (isLoginWindow) {
-
+            url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAu_FKQ3ifslEkyl7g-RX6AFxUvljXVg_k';
         } else {
-            setIsLoading(true);
-            fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAu_FKQ3ifslEkyl7g-RX6AFxUvljXVg_k',
-                {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        email, password, returnSecureToken: true
-                    }),
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                }
-            ).then(response => {
-                setIsLoading(false);
-                if (response.ok) {
-                    //do something
-                } else {
-                    return response.json().then(data => {
-                        if (data.error.message) {
-                            setError(data.error.message);
-                            console.log(data.error.message)
-                        }
-                    });
-                }
-            })
+            url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAu_FKQ3ifslEkyl7g-RX6AFxUvljXVg_k';
         }
+        setIsLoading(true);
+        fetch(url,
+            {
+                method: 'POST',
+                body: JSON.stringify({
+                    email, password, returnSecureToken: true
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+        ).then(response => {
+            setIsLoading(false);
+            if (response.ok) {
+                return response.json();
+            } else {
+                return response.json().then(data => {
+                    if (data.error.message) {
+                        throw new Error(data.error.message)
+                    } else {
+                        throw new Error('Unexpected error.')
+                    }
+                });
+            }
+        }).then((data) => {
+            console.log(data)
+        })
+            .catch(error => setError(error.message));
     }
+
 
     return (
         <section className={classes.auth}>
@@ -59,7 +68,7 @@ const AuthWindow = () => {
                 <CustomInput className={classes.control} type='password' id='password' required label='Password'
                              ref={passwordRef}/>
                 <div className={classes.actions}>
-                    <CustomButton confirmation>{isLoginWindow ? 'Login' : 'Create Account'}</CustomButton>
+                    <CustomButton confirmation>{isLoginWindow ? 'Login' : 'Create account'}</CustomButton>
                     <CustomButton
                         type='button'
                         className={classes.toggle}
@@ -68,7 +77,7 @@ const AuthWindow = () => {
                         {isLoginWindow ? 'Create new account' : 'Login with existing account'}
                     </CustomButton>
                     {isLoading && <LoadingSpinner/>}
-                    {error && <p className={classes.error}>Cannot sign up. <br/> {error}</p>}
+                    {error && <p className={classes.error}>Cannot continue. <br/> {error}</p>}
                 </div>
             </form>
         </section>
