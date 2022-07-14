@@ -1,18 +1,21 @@
 .default-button {
     border: none;
-    padding: 5px 0;
-    width: 8rem;
-    font-style: inherit;
+    padding: 12px;
+    width: 50%;
+    margin: 0.8rem auto;
+    /*font-style: inherit;*/
+    font-family: 'Lato', sans-serif;
+    /*todo*/
+    display: block;
+    text-align: center;
+    color: white;
     font-weight: bold;
-    font-size: 1rem;
-    background-color: rgb(191, 248, 217);
-    border-radius: 20px;
-    color: black;
-    box-shadow: 1px 1px 5px #7a7979;
+    background-color: #ea5c1f;
+    border-radius: 2rem;
 }
 
 .default-button:hover {
-    background-color: rgba(54, 183, 160, 0.47);
+    background-color: #ee7643;
     cursor: pointer;
 }
 
@@ -22,11 +25,11 @@
 }
 
 .default-button.confirmation {
-    background-color: lightgreen;
+    background-color: #228866;
 }
 
 .default-button.confirmation:hover {
-    background-color: #64e864;
+    background-color: #439d7f;
 }
 
 .default-button.cancellation {

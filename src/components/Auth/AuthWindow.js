@@ -10,14 +10,8 @@ const AuthWindow = () => {
         <section className={classes.auth}>
             <h1>{isLoginWindow ? 'Login' : 'Sign Up'}</h1>
             <form>
-                <CustomInput className={classes.control} type='email' id='email' required label='Your Email'>
-                    <label htmlFor='email'>Your Email</label>
-                    <CustomInput/>
-                </CustomInput>
-                <div className={classes.control}>
-                    <label htmlFor='password'>Your Password</label>
-                    <CustomInput type='password' id='password' required/>
-                </div>
+                <CustomInput className={classes.control} type='email' id='email' required label='Email'/>
+                <CustomInput className={classes.control} type='password' id='password' required label='Password'/>
                 <div className={classes.actions}>
                     <CustomButton confirmation>{isLoginWindow ? 'Login' : 'Create Account'}</CustomButton>
                     <CustomButton

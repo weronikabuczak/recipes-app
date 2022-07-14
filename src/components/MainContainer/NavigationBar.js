@@ -5,7 +5,7 @@ const NavigationBar = () => {
     return (
         <header className={classes.header}>
             <Link to='/home'>
-                <div className={classes.title}>Recipes App</div>
+                <div className={classes.title}>Title</div>
             </Link>
             <nav>
                 <ul>

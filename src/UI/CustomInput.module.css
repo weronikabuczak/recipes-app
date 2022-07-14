@@ -1,12 +1,22 @@
+.input {
+    text-align: center;
+}
+
 .input input {
     border-radius: 30px;
-    border: 1px solid #656363;
+    border: 1px solid #f3efef;
     height: 2rem;
     text-align: center;
-    margin
+    width: 93%;
+    /*box-shadow: #c8c8cb 1px 1px 1px 1px;*/
+}
+
+.input input:focus, .input input:active {
+    outline: 2px #969296 solid;
 }
 
 .input label {
     padding: 0.4rem;
     font-weight: bold;
+    display: block;
 }
