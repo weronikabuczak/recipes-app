@@ -25,6 +25,7 @@
     border-radius: 1rem;
     background-size: 300% 100%;
     transition: all .4s ease-in-out;
+    font-weight: bold;
 }
 
 .header li:hover {
@@ -41,7 +42,7 @@
 .header a {
     text-decoration: none;
     color: black;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
 .title {

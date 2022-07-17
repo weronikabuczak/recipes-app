@@ -1,11 +1,18 @@
 import classes from './AuthWindow.module.css';
 import CustomButton from "../../UI/CustomButton";
-import {useRef, useState} from "react";
+import {useContext, useRef, useState} from "react";
 import CustomInput from "../../UI/CustomInput";
 import LoadingSpinner from "../../UI/LoadingSpinner";
-import {logDOM} from "@testing-library/react";
+import AuthContext from "../../store/auth-context";
+
+//todo
+//custom hook
+//context
+// validation
 
 const AuthWindow = () => {
+    const authContext = useContext(AuthContext);
+
     const [isLoginWindow, setIsLoginWindow] = useState();
     const [error, setError] = useState();
     const [isLoading, setIsLoading] = useState(false);
@@ -52,6 +59,7 @@ const AuthWindow = () => {
                 });
             }
         }).then((data) => {
+            authContext.login(data.idToken);
             console.log(data)
         })
             .catch(error => setError(error.message));
