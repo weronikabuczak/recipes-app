@@ -4,6 +4,7 @@ import RecipesPage from "./router-pages/RecipesPage";
 import ShoppingListPage from "./router-pages/ShoppingListPage";
 import AuthenticationPage from "./router-pages/AuthenticationPage";
 import MainContainer from "./components/MainContainer/MainContainer";
+import ProfilePage from "./router-pages/ProfilePage";
 
 function App() {
     return (
@@ -20,6 +21,9 @@ function App() {
                 </Route>
                 <Route path='/shopping'>
                     <ShoppingListPage/>
+                </Route>
+                <Route path='/profile'>
+                    <ProfilePage/>
                 </Route>
             </Switch>
         </MainContainer>

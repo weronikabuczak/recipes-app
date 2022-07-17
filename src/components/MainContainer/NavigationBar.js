@@ -38,6 +38,10 @@ const NavigationBar = () => {
                             <Link to='/auth'>Login</Link>
                         </li>}
                     {isLoggedIn &&
+                        <li>
+                            <Link to='/profile'>Profile</Link>
+                        </li>}
+                    {isLoggedIn &&
                         <li onClick={logoutHandler}>
                             Logout
                         </li>}

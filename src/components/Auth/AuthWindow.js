@@ -49,6 +49,7 @@ const AuthWindow = () => {
             setIsLoading(false);
             if (response.ok) {
                 return response.json();
+
             } else {
                 return response.json().then(data => {
                     if (data.error.message) {
@@ -60,6 +61,7 @@ const AuthWindow = () => {
             }
         }).then((data) => {
             authContext.login(data.idToken);
+            console.log(data.idToken);
             console.log(data)
         })
             .catch(error => setError(error.message));
