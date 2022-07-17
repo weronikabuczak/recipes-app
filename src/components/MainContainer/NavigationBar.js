@@ -2,7 +2,6 @@ import {Link} from "react-router-dom";
 import classes from './NagivationBar.module.css';
 import {useContext} from "react";
 import AuthContext from "../../store/auth-context";
-import CustomButton from "../../UI/CustomButton";
 
 const NavigationBar = () => {
     const authContext = useContext(AuthContext);

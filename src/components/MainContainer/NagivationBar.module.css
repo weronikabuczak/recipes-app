@@ -64,7 +64,17 @@
         font-size: 2rem;
     }
     .header {
-        width: 80%;
+        width: 100%;
         text-align: center;
     }
+    .header li {
+        margin: 0.1rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .header ul {
+        display: none;
+    }
+/*    todo add extendable menu*/
 }
