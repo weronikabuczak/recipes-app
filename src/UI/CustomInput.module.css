@@ -1,6 +1,6 @@
 .input {
     text-align: center;
-    margin: 0.8rem;
+    margin: 0.8rem auto;
 }
 
 .input input {
@@ -20,3 +20,14 @@
     font-weight: bold;
     display: block;
 }
+
+@media (max-width: 425px) {
+    .input {
+        width: 100%;
+        margin: 0.2rem auto;
+    }
+    .input input {
+        width: 100%;
+    }
+}
+

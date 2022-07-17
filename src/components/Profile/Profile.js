@@ -9,7 +9,7 @@ const Profile = () => {
     console.log("token" +   token);
 
     const sendHandler = async () => {
-        const response = await fetch(`https://recipes-app-32684-default-rtdb.firebaseio.com/meals.json`);
+        const response = await fetch(`https://recipes-app-32684-default-rtdb.firebaseio.com/meals.json?auth=${token}`);
 
         if (!response.ok) {
             throw new Error('Cannot load content.');

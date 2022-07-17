@@ -42,13 +42,12 @@
 .header a {
     text-decoration: none;
     color: black;
-    /*font-weight: bold;*/
 }
 
 .title {
-    font-size: 1.8rem;
-    padding-right: 2rem;
-    color: #343434;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #8d2e02;
 }
 
 @keyframes nav-item {
@@ -57,5 +56,15 @@
     }
     100% {
         transform: scale(1.04);
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+    .header {
+        width: 80%;
+        text-align: center;
     }
 }

@@ -7,13 +7,12 @@ import AuthContext from "../../store/auth-context";
 
 //todo
 //custom hook
-//context
 // validation
 
 const AuthWindow = () => {
     const authContext = useContext(AuthContext);
 
-    const [isLoginWindow, setIsLoginWindow] = useState();
+    const [isLoginWindow, setIsLoginWindow] = useState(true);
     const [error, setError] = useState();
     const [isLoading, setIsLoading] = useState(false);
     const emailRef = useRef();

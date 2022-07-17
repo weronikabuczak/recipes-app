@@ -3,7 +3,6 @@
     padding: 12px;
     width: 50%;
     margin: 0.4rem auto;
-    /*font-style: inherit;*/
     font-family: 'Lato', sans-serif;
     /*todo*/
     display: block;
@@ -39,3 +38,10 @@
 .default-button.cancellation:hover {
     background-color: #ea7f5a;
 }
+
+@media (max-width: 425px) {
+    .default-button {
+        width: 100%;
+    }
+}
+

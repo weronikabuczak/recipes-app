@@ -6,7 +6,6 @@ import CustomButton from "../../UI/CustomButton";
 
 const NavigationBar = () => {
     const authContext = useContext(AuthContext);
-
     const isLoggedIn = authContext.isLoggedIn;
 
     const logoutHandler = () => {
@@ -32,10 +31,6 @@ const NavigationBar = () => {
                     {isLoggedIn &&
                         <li>
                             <Link to='/shopping'>Shopping</Link>
-                        </li>}
-                    {!isLoggedIn &&
-                        <li>
-                            <Link to='/auth'>Login</Link>
                         </li>}
                     {isLoggedIn &&
                         <li>
