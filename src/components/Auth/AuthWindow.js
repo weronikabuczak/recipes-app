@@ -19,27 +19,49 @@ const AuthWindow = () => {
         setIsLoginWindow(prevState => !prevState);
     };
 
-    const email = "Sdfsdfs";
-    const password = "sdfsdfs";
+    const {isLoading, errorMessage, sendRequest: authUser} = useHttp();
 
-    const {isLoading, errorMessage, sendRequest: authUser} = useHttp({
-        url: isLoginWindow ? 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAu_FKQ3ifslEkyl7g-RX6AFxUvljXVg_k'
-            : 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAu_FKQ3ifslEkyl7g-RX6AFxUvljXVg_k',
-        method: 'POST',
-        body: JSON.stringify({
-            email, password, returnSecureToken: true
-        }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
+    // const {isLoading, errorMessage, sendRequest: authUser} = useHttp({
+    //     url: isLoginWindow ? 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAu_FKQ3ifslEkyl7g-RX6AFxUvljXVg_k'
+    //         : 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAu_FKQ3ifslEkyl7g-RX6AFxUvljXVg_k',
+    //     method: 'POST',
+    //     body: JSON.stringify({
+    //         email, password, returnSecureToken: true
+    //     }),
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     }
+    // });
+    const retrieveData = (data) => {
+        console.log(data);
+        authContext.login(data.idToken);
+    }
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
+        authUser({
+                url: isLoginWindow ? 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAu_FKQ3ifslEkyl7g-RX6AFxUvljXVg_k'
+                    : 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAu_FKQ3ifslEkyl7g-RX6AFxUvljXVg_k',
+                method: 'POST',
+                body: {
+                    email, password, returnSecureToken: true
+                },
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }, retrieveData
+        );
+    }
+
 
     return (
         <section className={classes.auth}>
             <header>
                 <h1>{isLoginWindow ? 'Login' : 'Sign Up'}</h1>
             </header>
-            <form onSubmit={authUser}>
+            <form onSubmit={submitHandler}>
                 <CustomInput className={classes.control} type='email' id='email' required label='Email' ref={emailRef}/>
                 <CustomInput className={classes.control} type='password' id='password' required label='Password'
                              ref={passwordRef}/>

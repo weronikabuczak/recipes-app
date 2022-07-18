@@ -1,12 +1,12 @@
-import {useState} from "react";
+import {useCallback, useState} from "react";
 
-const useHttp = (config, returnData) => {
+const useHttp = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState();
 
-    const sendRequest = async (e) => {
+    const sendRequest = useCallback(async (config, returnData) => {
         setIsLoading(true);
-        e.preventDefault();
+        // e.preventDefault();
         try {
             console.log(config)
             const res = await fetch(config.url, {
@@ -29,7 +29,7 @@ const useHttp = (config, returnData) => {
             setErrorMessage(error.message);
         }
         setIsLoading(false);
-    }
+    }, []);
     return {
         isLoading, errorMessage, sendRequest
     }
