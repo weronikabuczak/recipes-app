@@ -48,6 +48,7 @@
     font-size: 3rem;
     font-weight: bold;
     color: #8d2e02;
+    white-space: nowrap;
 }
 
 @keyframes nav-item {
@@ -69,6 +70,7 @@
     }
     .header li {
         margin: 0.1rem;
+        padding: 0.7rem;
     }
 }
 
@@ -77,4 +79,14 @@
         display: none;
     }
 /*    todo add extendable menu*/
+}
+
+@media (max-width: 1440px) {
+    .header {
+        width: 100%;
+    }
+    .title {
+        font-size: 1.8rem;
+    }
+    /*    todo add extendable menu*/
 }
