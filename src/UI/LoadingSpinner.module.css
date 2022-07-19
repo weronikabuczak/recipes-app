@@ -3,8 +3,8 @@
     height: 30px;
     margin-left: 1rem;
     margin-top: 1rem;
-    border: 10px solid #f3f3f3; /* Light grey */
-    border-top: 10px solid #363636; /* Black */
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid #363636;
     border-radius: 50%;
     animation: spinner 2s linear infinite;
     display: inline-block;

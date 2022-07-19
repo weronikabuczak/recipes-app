@@ -6,7 +6,6 @@ const useHttp = () => {
 
     const sendRequest = useCallback(async (config, returnData) => {
         setIsLoading(true);
-        // e.preventDefault();
         try {
             console.log(config)
             const res = await fetch(config.url, {

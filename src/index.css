@@ -10,7 +10,6 @@ html {
 
 body {
   margin: 0;
-  /*background-color: #FAB49B;*/
   padding: 0.7rem 2rem 18rem;
   background-image: linear-gradient(to right, #f8bda8, rgba(245, 78, 78, 0.93));
   border-radius: 2rem;

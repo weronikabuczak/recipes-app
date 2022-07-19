@@ -14,26 +14,13 @@ const AuthWindow = () => {
     const [isLoginWindow, setIsLoginWindow] = useState(true);
     const emailRef = useRef();
     const passwordRef = useRef();
+    const {isLoading, errorMessage, sendRequest: authUser} = useHttp();
 
     const switchAuthHandler = () => {
         setIsLoginWindow(prevState => !prevState);
     };
 
-    const {isLoading, errorMessage, sendRequest: authUser} = useHttp();
-
-    // const {isLoading, errorMessage, sendRequest: authUser} = useHttp({
-    //     url: isLoginWindow ? 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAu_FKQ3ifslEkyl7g-RX6AFxUvljXVg_k'
-    //         : 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAu_FKQ3ifslEkyl7g-RX6AFxUvljXVg_k',
-    //     method: 'POST',
-    //     body: JSON.stringify({
-    //         email, password, returnSecureToken: true
-    //     }),
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     }
-    // });
     const retrieveData = (data) => {
-        console.log(data);
         authContext.login(data.idToken);
     }
 
@@ -55,23 +42,18 @@ const AuthWindow = () => {
         );
     }
 
-
     return (
         <section className={classes.auth}>
             <header>
                 <h1>{isLoginWindow ? 'Login' : 'Sign Up'}</h1>
             </header>
             <form onSubmit={submitHandler}>
-                <CustomInput className={classes.control} type='email' id='email' required label='Email' ref={emailRef}/>
-                <CustomInput className={classes.control} type='password' id='password' required label='Password'
+                <CustomInput type='email' id='email' required label='Email' ref={emailRef}/>
+                <CustomInput type='password' id='password' required label='Password'
                              ref={passwordRef}/>
-                <div className={classes.actions}>
+                <div>
                     <CustomButton confirmation>{isLoginWindow ? 'Login' : 'Create account'}</CustomButton>
-                    <CustomButton
-                        type='button'
-                        className={classes.toggle}
-                        onClick={switchAuthHandler}
-                    >
+                    <CustomButton type='button' onClick={switchAuthHandler}>
                         {isLoginWindow ? 'Create new account' : 'Login with existing account'}
                     </CustomButton>
                     {isLoading && <LoadingSpinner/>}
