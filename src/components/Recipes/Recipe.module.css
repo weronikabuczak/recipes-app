@@ -1,14 +1,14 @@
 .card {
     background-color: white;
-    padding: 0.3rem;
+    padding: 0.3rem 0.3rem 1rem;
     width: 60%;
-    height: auto;
     margin: 2rem auto;
     border-radius: 2rem;
     display: grid;
     grid-template-columns: 40% 60%;
-    gap: 10px;
+    gap: 8px;
     grid-template-rows: 45% 55%;
+    animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .img {
@@ -52,7 +52,7 @@
     border-radius: 2rem;
     z-index: 1;
     background-color: rgba(255, 224, 214, 0.52);
-
+    animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .preparation h1 {
@@ -61,8 +61,22 @@
 }
 
 .preparation p {
-    font-size: 1.1rem;
+    font-size: 1.07rem;
     text-align: justify;
-
+    text-indent: 1rem;
+    line-height: 1.3;
 }
+
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
 

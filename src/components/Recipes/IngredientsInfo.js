@@ -1,16 +1,15 @@
 import classes from './IngredientsInfo.module.css';
 
-const IngredientsInfo = () => {
+const IngredientsInfo = ({ingredients}) => {
     return (
-        <section className={classes.ingredients}>
+        <div className={classes.ingredients}>
             <header className={classes.header}>Ingredients</header>
             <ul className={classes.ingredients__list}>
-                <li>Flour <span className={classes.quantity}>500g</span></li>
-                <li>Ing 2</li>
-                <li>Ing 3</li>
-                <li>Ing 4</li>
+                {ingredients && Object.keys(ingredients).map((key, item) => (
+                    <li>{key} <span className={classes.quantity}>{ingredients[key]}</span></li>
+                ))}
             </ul>
-        </section>
+        </div>
     )
 }
 

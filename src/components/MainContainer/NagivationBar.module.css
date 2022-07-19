@@ -1,13 +1,16 @@
 .header {
-    width: 60%;
-    height: 7rem;
+    width: 70%;
+    height: 5rem;
     background-color: #F9F9F9;
     display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 1;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
     padding: 0 10%;
-    border-radius: 2rem;
+    border-radius: 0 0 20px 20px;
 }
 
 .header ul {
@@ -18,9 +21,9 @@
 }
 
 .header li {
-    margin-right: 1.5rem;
+    margin-right: 0.8rem;
     font-size: 1.1rem;
-    background-color: #ecdcdc;
+    background-color: rgba(255, 209, 136, 0.76);
     padding: 1rem;
     border-radius: 1rem;
     background-size: 300% 100%;
@@ -30,7 +33,6 @@
 
 .header li:hover {
     font-size: 1.1rem;
-    background-color: #e1b4b4;
     cursor: pointer;
     animation: nav-item 0.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
     background-position: 100% 0;
@@ -47,8 +49,9 @@
 .title {
     font-size: 2.2rem;
     font-weight: bold;
-    color: #8d2e02;
+    color: #000000;
     white-space: nowrap;
+    margin-right: 2rem;
 }
 
 @keyframes nav-item {

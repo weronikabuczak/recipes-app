@@ -5,6 +5,7 @@ import {useContext, useEffect, useState} from "react";
 import AuthContext from "../../store/auth-context";
 import LoadingSpinner from "../../UI/LoadingSpinner";
 import Error from "../../UI/Error";
+import CustomButton from "../../UI/CustomButton";
 
 const Recipes = () => {
     const {isLoading, errorMessage, sendRequest: getRecipes} = useHttp();
@@ -30,11 +31,10 @@ const Recipes = () => {
         }
         setRecipes(loadedRecipes);
     };
-    console.log(recipes);
 
     useEffect(() => {
             getRecipes({
-                url: `https://recipes-app-32684-default-rtdb.firebaseio.cm/recipes.json?auth=${token}`,
+                url: `https://recipes-app-32684-default-rtdb.firebaseio.com/recipes.json?auth=${token}`,
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -43,13 +43,15 @@ const Recipes = () => {
         [])
 
     return (
-        <section>
+        <section className={classes.recipes}>
             <header className={classes.header}>
-                <h1>My recipes</h1>
+                {/*<h1>Below you can find your recipes.</h1>*/}
                 {isLoading && <LoadingSpinner/>}
                 {errorMessage && <Error errorMessage={errorMessage}/>}
             </header>
-            <Recipe/>
+                {recipes && recipes.map((recipe) => (
+                        <Recipe recipe={recipe}/>
+                ))}
         </section>
     )
 }

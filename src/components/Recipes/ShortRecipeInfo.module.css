@@ -3,13 +3,12 @@
     margin: 1rem;
 }
 
-.shortInfo span {
+.feature {
     padding: 0.1rem 0.8rem;
-    text-transform: uppercase;
     font-size: 1.1rem;
 }
 
-.shortInfo span:first-child {
+.feature:first-child {
     border-right: 2px solid rgba(176, 174, 174, 0.93);
 }
 
