@@ -5,8 +5,10 @@ import CustomInput from "../../UI/CustomInput";
 import LoadingSpinner from "../../UI/LoadingSpinner";
 import AuthContext from "../../store/auth-context";
 import useHttp from "../../hooks/use-http";
+import {useHistory} from "react-router-dom";
 
 const AuthWindow = () => {
+    const history = useHistory();
     const authContext = useContext(AuthContext);
     const [isLoginWindow, setIsLoginWindow] = useState(true);
     const emailRef = useRef();
@@ -20,7 +22,9 @@ const AuthWindow = () => {
     };
 
     const retrieveData = (data) => {
+        console.log(data);
         authContext.login(data.idToken);
+        history.replace('/home');
     }
 
     const checkPasswordIsValid = (password) => {
@@ -42,7 +46,7 @@ const AuthWindow = () => {
         if (!isLoginWindow) {
             checkPasswordIsValid(password);
         }
-        if (passwordIsValid) {
+        if (isLoginWindow || (!isLoginWindow && passwordIsValid)) {
             authUser({
                     url: isLoginWindow ? 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAu_FKQ3ifslEkyl7g-RX6AFxUvljXVg_k'
                         : 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAu_FKQ3ifslEkyl7g-RX6AFxUvljXVg_k',

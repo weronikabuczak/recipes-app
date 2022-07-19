@@ -7,7 +7,6 @@ const useHttp = () => {
     const sendRequest = useCallback(async (config, returnData) => {
         setIsLoading(true);
         try {
-            console.log(config)
             const res = await fetch(config.url, {
                 method: config.method,
                 headers: config.headers ? config.headers : {},
@@ -15,8 +14,7 @@ const useHttp = () => {
             });
             if (!res.ok) {
                 const data = await res.json();
-                // return res.json().then(data => {
-                if (data.error.message) {
+                if (data.error.message && (!data.error.message.includes('WEAK_PASSWORD'))) {
                     throw new Error(data.error.message);
                 } else {
                     throw new Error('Unknown error.')
