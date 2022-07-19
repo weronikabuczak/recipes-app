@@ -12,13 +12,13 @@
     font-size: 1.3rem;
 }
 
-.error {
-    padding: 1rem;
-    border-radius: 2rem;
-    background-color: #efefef;
-    border: #e5b8b2 1px solid;
-    box-shadow: 0 0 2px 1px #f6d2cd;
-}
+/*.error {*/
+/*    padding: 1rem;*/
+/*    border-radius: 2rem;*/
+/*    background-color: #efefef;*/
+/*    border: #e5b8b2 1px solid;*/
+/*    box-shadow: 0 0 2px 1px #f6d2cd;*/
+/*}*/
 
 @media (max-width: 1300px) {
    .auth {

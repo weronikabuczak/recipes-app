@@ -6,6 +6,7 @@ const useHttp = () => {
 
     const sendRequest = useCallback(async (config, returnData) => {
         setIsLoading(true);
+        setErrorMessage(null);
         try {
             const res = await fetch(config.url, {
                 method: config.method ? config.method : 'GET',

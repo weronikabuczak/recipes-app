@@ -6,6 +6,7 @@ import LoadingSpinner from "../../UI/LoadingSpinner";
 import AuthContext from "../../store/auth-context";
 import useHttp from "../../hooks/use-http";
 import {useHistory} from "react-router-dom";
+import Error from "../../UI/Error";
 
 const AuthWindow = () => {
     const history = useHistory();
@@ -77,8 +78,10 @@ const AuthWindow = () => {
                         {isLoginWindow ? 'Create new account' : 'Login with existing account'}
                     </CustomButton>
                     {isLoading && <LoadingSpinner/>}
-                    {errorMessage && <p className={classes.error}>Cannot continue. <br/> {errorMessage}</p>}
-                    {message && <p className={classes.error}>{message}</p>}
+                    {/*{errorMessage && <p className={classes.error}>Cannot continue. <br/> {errorMessage}</p>}*/}
+                    {errorMessage && <Error errorMessage={errorMessage}/>}
+                    {message && <Error errorMessage={message}/>}
+                    {/*{message && <p className={classes.error}>{message}</p>}*/}
                 </div>
             </form>
         </section>

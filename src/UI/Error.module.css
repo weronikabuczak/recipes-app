@@ -1,0 +1,11 @@
+.error {
+    padding: 1rem;
+    max-width: 30rem;
+    border-radius: 2rem;
+    color: red;
+    margin: 0.2rem auto;
+    font-size: 1.1rem;
+    background-color: #efefef;
+    border: #e5b8b2 1px solid;
+    box-shadow: 0 0 2px 1px #f6d2cd;
+}
