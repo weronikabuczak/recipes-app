@@ -1,0 +1,24 @@
+.ingredients {
+    background-color: #eee;
+    border-radius: 2rem;
+    padding: 1rem;
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.header {
+    font-size: 1.3rem;
+    padding-left: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.ingredients__list {
+    list-style: none;
+    width: 90%;
+}
+
+.ingredients__list li {
+    border-bottom: #e3cabc 1px solid;
+    padding: 0.4rem;
+}

@@ -1,6 +1,7 @@
 import classes from './Recipe.module.css';
 import pic1 from '../../assets/pic1.jpg';
 import ShortRecipeInfo from "./ShortRecipeInfo";
+import IngredientsInfo from "./IngredientsInfo";
 
 const Recipe = () => {
     return (
@@ -11,9 +12,8 @@ const Recipe = () => {
                     <h2>Header 1</h2>
                     <h4>Header 2</h4>
                 </header>
-                {/*<div className={classes.info}>information</div>*/}
                 <ShortRecipeInfo/>
-                <div className={classes.ingredients}>Ingredients</div>
+                <IngredientsInfo/>
             </div>
             <div className={classes.content}>Recipe Details</div>
         </section>

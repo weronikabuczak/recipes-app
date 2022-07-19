@@ -2,13 +2,13 @@
     background-color: white;
     padding: 0.3rem;
     width: 60%;
-    height: 60vh;
+    height: auto;
     margin: 2rem auto;
     border-radius: 2rem;
     display: grid;
     grid-template-columns: repeat(2, 50%);
     gap: 10px;
-    grid-template-rows: repeat(2, 50%);
+    /*grid-template-rows: repeat(2, 50%);*/
 }
 
 .img {
@@ -24,6 +24,8 @@
 .main {
     grid-column: 1;
     grid-row: 2;
+    padding: 1rem;
+    margin: 0.4rem 0;
 }
 
 .header {
