@@ -21,7 +21,7 @@ const AuthWindow = () => {
         setIsLoginWindow(prevState => !prevState);
     };
 
-    const retrieveData = (data) => {
+    const receiveData = (data) => {
         console.log(data);
         authContext.login(data.idToken);
         history.replace('/home');
@@ -57,7 +57,7 @@ const AuthWindow = () => {
                     headers: {
                         'Content-Type': 'application/json'
                     }
-                }, retrieveData
+                }, receiveData
             );
         }
     }

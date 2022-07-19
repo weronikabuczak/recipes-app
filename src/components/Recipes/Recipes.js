@@ -1,16 +1,55 @@
 import Recipe from "./Recipe";
 import classes from './Recipes.module.css';
+import useHttp from "../../hooks/use-http";
+import {useContext, useEffect, useState} from "react";
+import AuthContext from "../../store/auth-context";
 
 const Recipes = () => {
-return (
-    <section>
-        <header className={classes.header}>
-            <h1>My recipes</h1>
-        </header>
-        <Recipe/>
+    const {isLoading, errorMessage, sendRequest: getRecipes} = useHttp();
+    const authContext = useContext(AuthContext);
+    const token = authContext.token;
+    const [recipes, setRecipes] = useState([]);
 
-    </section>
-)
+    const receiveData = (data) => {
+        console.log(data);
+        //redux?
+        const loadedRecipes = [];
+        for (const key in data) {
+            loadedRecipes.push({
+                id: key,
+                name: data[key].name,
+                desc: data[key].desc,
+                img: data[key].img,
+                diff: data[key].diff,
+                hours: data[key].hours,
+                minutes: data[key].minutes,
+                preparation: data[key].preparation,
+                ingredients: data[key].ingredients
+            })
+        }
+        setRecipes(loadedRecipes);
+    };
+    console.log(recipes);
+
+    useEffect(() => {
+            getRecipes({
+                url: `https://recipes-app-32684-default-rtdb.firebaseio.com/recipes.json?auth=${token}`,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }, receiveData);
+        },
+        [])
+
+    return (
+        <section>
+            <header className={classes.header}>
+                <h1>My recipes</h1>
+            </header>
+            <Recipe/>
+
+        </section>
+    )
 }
 
 export default Recipes;

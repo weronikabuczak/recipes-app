@@ -8,7 +8,7 @@ const useHttp = () => {
         setIsLoading(true);
         try {
             const res = await fetch(config.url, {
-                method: config.method,
+                method: config.method ? config.method : 'GET',
                 headers: config.headers ? config.headers : {},
                 body: config.body ? JSON.stringify(config.body) : null
             });
