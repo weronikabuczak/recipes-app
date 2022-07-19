@@ -1,8 +1,8 @@
 .ingredients {
-    background-color: #eee;
+    background-color: #f5f4f4;
     border-radius: 2rem;
     padding: 1rem;
-    width: 80%;
+    width: 90%;
     margin: 2rem auto;
 }
 
@@ -21,4 +21,10 @@
 .ingredients__list li {
     border-bottom: #e3cabc 1px solid;
     padding: 0.4rem;
+}
+
+.quantity {
+    font-weight: bold;
+    color: #e14747;
+    float: right;
 }

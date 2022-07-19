@@ -1,10 +1,11 @@
 import Recipe from "./Recipe";
+import classes from './Recipes.module.css';
 
 const Recipes = () => {
 return (
     <section>
-        <header>
-            My recipes
+        <header className={classes.header}>
+            <h1>My recipes</h1>
         </header>
         <Recipe/>
 
