@@ -1,6 +1,8 @@
+import Recipes from "../components/Recipes/Recipes";
+
 const RecipesPage = () => {
     return (
-        <div>recipes page</div>
+        <Recipes/>
     )
 
 }

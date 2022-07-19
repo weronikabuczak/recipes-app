@@ -1,0 +1,19 @@
+.shortInfo {
+    text-align: center;
+    margin: 1rem;
+}
+
+.shortInfo span {
+    padding: 0.1rem 0.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.shortInfo span:first-child {
+    border-right: 2px solid rgba(176, 174, 174, 0.93);
+}
+
+.shortInfo img {
+    height: auto;
+    margin-right: 0.3rem;
+}
