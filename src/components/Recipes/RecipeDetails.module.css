@@ -1,6 +1,6 @@
 .card {
     background-color: white;
-    padding: 0.3rem 0.3rem 1rem;
+    padding: 0.3rem 0.3rem 4rem;
     width: 60%;
     margin: 2rem auto;
     border-radius: 2rem;
@@ -32,7 +32,6 @@
 }
 
 .header h2 {
-
     font-size: 2rem;
     margin: 0.2rem;
 }
@@ -41,7 +40,6 @@
     margin: 0.1rem;
     color: #7a7979;
 }
-
 
 .preparation {
     grid-column: 2;
@@ -86,6 +84,7 @@
 @media (max-width: 768px) {
     .card {
         display: block;
+        padding: 0.3rem 0.3rem 0.7rem;
     }
 }
 
