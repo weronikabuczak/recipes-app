@@ -13,3 +13,18 @@
     width: 70%;
     margin: 0 auto;
 }
+
+
+@media (max-width: 1024px) {
+    .recipes__list {
+        grid-template-columns: repeat(2, 50%);
+        width: 95%;
+    }
+}
+
+@media (max-width: 425px) {
+    .recipes__list {
+        grid-template-columns: 100%;
+        width: 100%;
+    }
+}

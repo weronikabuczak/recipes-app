@@ -16,7 +16,6 @@ const ShortRecipeInfo = ({recipe}) => {
         recipeIcon = diff3Icon;
     }
 
-
     return (
         <div className={classes['shortInfo']}>
             <span className={classes.feature}>

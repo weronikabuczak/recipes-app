@@ -27,7 +27,7 @@ const RecipeDetails = () => {
                 'Content-Type': 'application/json'
             }
         }, receiveData)
-    }, [getRecipe, id]);
+    }, [getRecipe, id, token]);
 
     const {ingredients} = recipe;
 

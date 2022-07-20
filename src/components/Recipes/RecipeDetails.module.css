@@ -77,3 +77,23 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .card {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        display: block;
+    }
+}
+
+@media (max-width: 425px) {
+    .card {
+        width: 95%;
+    }
+}
+
+
+

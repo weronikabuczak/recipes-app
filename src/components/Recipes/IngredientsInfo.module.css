@@ -28,3 +28,14 @@
     color: #e14747;
     float: right;
 }
+
+@media (max-width: 425px) {
+    .ingredients {
+        width: 100%;
+        margin: 0;
+    }
+    .ingredients__list {
+        width: 100%;
+        padding: 0;
+    }
+}
