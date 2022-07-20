@@ -5,6 +5,7 @@ import {useContext, useEffect, useState} from "react";
 import AuthContext from "../../store/auth-context";
 import LoadingSpinner from "../../UI/LoadingSpinner";
 import Error from "../../UI/Error";
+import CustomButton from "../../UI/CustomButton";
 
 const Recipes = () => {
     const {isLoading, errorMessage, sendRequest: getRecipes} = useHttp();
@@ -44,10 +45,10 @@ const Recipes = () => {
     return (
         <section className={classes.recipes}>
             <header className={classes.header}>
-                <h1>Below you can find your recipes.</h1>
                 {isLoading && <LoadingSpinner/>}
                 {errorMessage && <Error errorMessage={errorMessage}/>}
             </header>
+            <CustomButton className={classes['recipes__button--add']}>Add new recipe</CustomButton>
             <div className={classes.recipes__list}>
                 {recipes && recipes.map((recipe) => (
                         <Recipe key={recipe.id} recipe={recipe}/>

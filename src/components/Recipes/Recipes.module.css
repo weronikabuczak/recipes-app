@@ -1,17 +1,17 @@
-.header h1 {
-    text-align: center;
-    padding: 1rem;
+.header {
     width: 60%;
-    margin: 2rem auto;
-    border-radius: 4rem;
-    background-color: salmon;
-}
+    }
 
 .recipes__list {
     display: grid;
     grid-template-columns: repeat(3, 33%);
     width: 70%;
     margin: 0 auto;
+}
+
+.recipes__button--add {
+    margin-top: 2rem;
+    width: 20%;
 }
 
 

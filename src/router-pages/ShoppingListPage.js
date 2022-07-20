@@ -1,6 +1,8 @@
+import ShoppingList from "../components/ShoppingList/ShoppingList";
+
 const ShoppingListPage = () => {
     return (
-        <div>Shopping List</div>
+        <ShoppingList/>
     )
 
 }

@@ -1,0 +1,44 @@
+.card {
+    background-color: white;
+    width: 60%;
+    margin: 5rem auto;
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+.list {
+    font-size: 1.7rem;
+    list-style-type: none;
+}
+
+.list li {
+    padding: 0.3rem;
+    border-bottom: 1px #cccccc solid;
+}
+
+.list li span {
+    color: black;
+    font-weight: bold;
+    float: right;
+}
+
+.list__button {
+    border-radius: 1rem;
+    border: none;
+    background-color: #e14747;
+    font-weight: bold;
+    color: white;
+    margin: 0 0.5rem 0.2rem;
+    font-size: 1.2rem;
+    padding: 0.2rem 0.6rem;
+}
+
+.list__button:hover:before {
+    content: 'Delete';
+    cursor: pointer;
+}
+
+.list__button:before {
+    content: 'X';
+}
+
