@@ -39,20 +39,20 @@ const Recipes = () => {
                 }
             }, receiveData);
         },
-        [])
+        [getRecipes, token])
 
     return (
         <section className={classes.recipes}>
             <header className={classes.header}>
-                {/*<h1>Below you can find your recipes.</h1>*/}
+                <h1>Below you can find your recipes.</h1>
                 {isLoading && <LoadingSpinner/>}
                 {errorMessage && <Error errorMessage={errorMessage}/>}
             </header>
-            <ul className={classes.recipes__list}>
+            <div className={classes.recipes__list}>
                 {recipes && recipes.map((recipe) => (
-                        <Recipe recipe={recipe}/>
+                        <Recipe key={recipe.id} recipe={recipe}/>
                 ))}
-            </ul>
+            </div>
         </section>
     )
 }

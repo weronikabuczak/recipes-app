@@ -68,8 +68,8 @@ const AuthWindow = () => {
                 <h1>{isLoginWindow ? 'Login' : 'Sign Up'}</h1>
             </header>
             <form onSubmit={submitHandler}>
-                <CustomInput type='email' id='email' value='t@t.com' required label='Email' ref={emailRef}/>
-                <CustomInput type='password' id='password' value='Password1!' required label='Password'
+                <CustomInput type='email' id='email' required label='Email' ref={emailRef}/>
+                <CustomInput type='password' id='password' required label='Password'
                              ref={passwordRef}/>
                 <div>
                     <CustomButton confirmation>{isLoginWindow ? 'Login' : 'Create account'}</CustomButton>
