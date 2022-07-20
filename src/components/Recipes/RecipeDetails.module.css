@@ -1,0 +1,12 @@
+.card {
+    background-color: white;
+    padding: 0.3rem 0.3rem 1rem;
+    width: 60%;
+    margin: 2rem auto;
+    border-radius: 2rem;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 8px;
+    grid-template-rows: 45% 55%;
+    animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}

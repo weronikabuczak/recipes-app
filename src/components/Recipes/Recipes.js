@@ -5,7 +5,6 @@ import {useContext, useEffect, useState} from "react";
 import AuthContext from "../../store/auth-context";
 import LoadingSpinner from "../../UI/LoadingSpinner";
 import Error from "../../UI/Error";
-import CustomButton from "../../UI/CustomButton";
 
 const Recipes = () => {
     const {isLoading, errorMessage, sendRequest: getRecipes} = useHttp();
@@ -49,9 +48,11 @@ const Recipes = () => {
                 {isLoading && <LoadingSpinner/>}
                 {errorMessage && <Error errorMessage={errorMessage}/>}
             </header>
+            <ul className={classes.recipes__list}>
                 {recipes && recipes.map((recipe) => (
                         <Recipe recipe={recipe}/>
                 ))}
+            </ul>
         </section>
     )
 }

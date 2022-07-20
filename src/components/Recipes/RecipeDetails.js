@@ -1,18 +1,9 @@
-import classes from './Recipe.module.css';
+import classes from "./Recipe.module.css";
 import ShortRecipeInfo from "./ShortRecipeInfo";
 import IngredientsInfo from "./IngredientsInfo";
-import CustomButton from "../../UI/CustomButton";
-import {useHistory} from "react-router-dom";
 
-const Recipe = ({recipe}) => {
+const RecipeDetails = ({recipe}) => {
     const {ingredients} = recipe;
-    const history = useHistory();
-
-    const showRecipeDetailsHandler = () => {
-        history.push({
-            pathname: `/recipe/${recipe.id}`
-        });
-    }
 
     return (
         <section className={classes.card}>
@@ -24,11 +15,13 @@ const Recipe = ({recipe}) => {
                 </header>
                 <ShortRecipeInfo recipe={recipe}/>
                 <IngredientsInfo ingredients={ingredients}/>
-                <CustomButton onClick={showRecipeDetailsHandler}>Show more</CustomButton>
             </div>
-            {/*<RecipeDetails/>*/}
+            <div className={classes.preparation}>
+                <h1>Preparation</h1>
+                <p>{recipe.preparation}</p>
+            </div>
         </section>
     )
 }
 
-export default Recipe;
+export default RecipeDetails;
