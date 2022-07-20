@@ -2,7 +2,8 @@ import classes from './Recipe.module.css';
 import ShortRecipeInfo from "./ShortRecipeInfo";
 import IngredientsInfo from "./IngredientsInfo";
 import CustomButton from "../../UI/CustomButton";
-import {useHistory} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
+import CustomInput from "../../UI/CustomInput";
 
 const Recipe = ({recipe}) => {
     const {ingredients} = recipe;
@@ -10,7 +11,7 @@ const Recipe = ({recipe}) => {
 
     const showRecipeDetailsHandler = () => {
         history.push({
-            pathname: `/recipe/${recipe.id}`
+            pathname: `/recipes/${recipe.id}`
         });
     }
 
@@ -26,7 +27,6 @@ const Recipe = ({recipe}) => {
                 <IngredientsInfo ingredients={ingredients}/>
                 <CustomButton onClick={showRecipeDetailsHandler}>Show more</CustomButton>
             </div>
-            {/*<RecipeDetails/>*/}
         </section>
     )
 }

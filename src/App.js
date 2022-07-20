@@ -8,6 +8,7 @@ import ProfilePage from "./router-pages/ProfilePage";
 import {useContext} from "react";
 import AuthContext from "./store/auth-context";
 import RecipeDetails from "./components/Recipes/RecipeDetails";
+import RecipeDetailsPage from "./router-pages/RecipeDetailsPage";
 
 function App() {
     const authContext = useContext(AuthContext);
@@ -23,7 +24,7 @@ function App() {
                     {!isLoggedIn && <Redirect to='/auth'/>}
                     <HomePage/>
                 </Route>
-                <Route path='/recipes'>
+                <Route path='/recipes' exact>
                     {!isLoggedIn && <Redirect to='/auth'/>}
                     <RecipesPage/>
                 </Route>
@@ -35,9 +36,9 @@ function App() {
                     {!isLoggedIn && <Redirect to='/auth'/>}
                     <ProfilePage/>
                 </Route>
-                <Route path='/recipe:id?'>
+                <Route path='/recipes/:id'>
                     {!isLoggedIn && <Redirect to='/auth'/>}
-                    {isLoggedIn && <RecipeDetails/>}
+                    {isLoggedIn && <RecipeDetailsPage/>}
                 </Route>
             </Switch>
         </MainContainer>
