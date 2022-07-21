@@ -4,6 +4,7 @@
     padding: 1rem;
     width: 90%;
     margin: 2rem auto;
+    /*max-height: 10rem;*/
 }
 
 .header {
@@ -15,7 +16,8 @@
 
 .ingredients__list {
     list-style: none;
-    width: 90%;
+    width: 100%;
+    padding: 0.1rem;
 }
 
 .ingredients__list li {
@@ -27,6 +29,12 @@
     font-weight: bold;
     color: #e14747;
     float: right;
+}
+
+.moreInfo {
+    background-color: white;
+    padding: 0.8rem 0.5rem;
+    border-radius: 1rem;
 }
 
 @media (max-width: 425px) {

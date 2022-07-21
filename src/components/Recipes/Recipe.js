@@ -24,7 +24,7 @@ const Recipe = ({recipe}) => {
                     <h4>{recipe.desc}</h4>
                 </header>
                 <ShortRecipeInfo recipe={recipe}/>
-                <IngredientsInfo ingredients={ingredients}/>
+                <IngredientsInfo ingredients={ingredients} short={true}/>
                 <CustomButton onClick={showRecipeDetailsHandler}>Show more</CustomButton>
             </div>
         </section>

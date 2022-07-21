@@ -45,7 +45,7 @@ const RecipeDetails = () => {
                         <h4>{recipe.desc}</h4>
                     </header>
                     <ShortRecipeInfo recipe={recipe}/>
-                    <IngredientsInfo ingredients={ingredients}/>
+                    <IngredientsInfo ingredients={ingredients} short={false}/>
                 </div>
                 <div className={classes.preparation}>
                     <h1>Preparation</h1>
