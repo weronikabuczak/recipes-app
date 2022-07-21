@@ -77,10 +77,8 @@ const AuthWindow = () => {
                         {isLoginWindow ? 'Create new account' : 'Login with existing account'}
                     </CustomButton>
                     {isLoading && <LoadingSpinner/>}
-                    {/*{errorMessage && <p className={classes.error}>Cannot continue. <br/> {errorMessage}</p>}*/}
                     {errorMessage && <Error errorMessage={errorMessage}/>}
                     {message && <Error errorMessage={message}/>}
-                    {/*{message && <p className={classes.error}>{message}</p>}*/}
                 </div>
             </form>
         </section>

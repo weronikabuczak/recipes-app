@@ -1,6 +1,6 @@
 .card {
     background-color: white;
-    width: 60%;
+    width: 30%;
     margin: 5rem auto;
     padding: 2rem;
     border-radius: 2rem;
@@ -17,7 +17,7 @@
 }
 
 .list li span {
-    color: black;
+    color: darkred;
     font-weight: bold;
     float: right;
 }

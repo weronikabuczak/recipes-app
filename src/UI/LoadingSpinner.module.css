@@ -1,8 +1,9 @@
 .spinner {
     width: 30px;
     height: 30px;
-    margin-left: 1rem;
-    margin-top: 1rem;
+    /*margin-left: 1rem;*/
+    /*margin-top: 1rem;*/
+    margin: 0 auto;
     border: 10px solid #f3f3f3;
     border-top: 10px solid #363636;
     border-radius: 50%;

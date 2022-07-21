@@ -17,7 +17,6 @@ const RecipeDetails = () => {
 
     const receiveData = (data) => {
         setRecipe(data);
-
     }
 
     useEffect(() => {
