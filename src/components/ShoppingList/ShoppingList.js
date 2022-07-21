@@ -9,6 +9,7 @@ import LoadingSpinner from "../../UI/LoadingSpinner";
 import Error from "../../UI/Error";
 
 const ShoppingList = () => {
+
     const [showNewProductForm, setShowNewProductForm] = useState(false);
     const {isLoading, errorMessage, sendRequest: getProducts} = useHttp();
     const authContext = useContext(AuthContext);
@@ -33,6 +34,7 @@ const ShoppingList = () => {
     };
 
     useEffect(() => {
+            console.log("effect")
             getProducts({
                 url: `https://recipes-app-32684-default-rtdb.firebaseio.com/products.json?auth=${token}`,
                 headers: {
@@ -40,7 +42,9 @@ const ShoppingList = () => {
                 }
             }, receiveData);
         },
-        [getProducts, token])
+        [getProducts, token, showNewProductForm]);
+
+
 
     return (
         <section className={classes.card}>
@@ -57,7 +61,7 @@ const ShoppingList = () => {
                     </li>
                 ))}
             </ul>
-            {showNewProductForm && <NewProductForm/>}
+            {showNewProductForm && <NewProductForm setShowNewProductForm={setShowNewProductForm}/>}
             {!showNewProductForm && <CustomButton onClick={showNewProductFormHandler}>Add product</CustomButton>}
         </section>
     )

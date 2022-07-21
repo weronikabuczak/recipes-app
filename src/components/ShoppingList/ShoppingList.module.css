@@ -1,13 +1,13 @@
 .card {
     background-color: white;
-    width: 30%;
+    width: 40%;
     margin: 5rem auto;
     padding: 2rem;
     border-radius: 2rem;
 }
 
 .list {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     list-style-type: none;
 }
 
