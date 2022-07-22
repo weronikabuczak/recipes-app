@@ -32,7 +32,7 @@ const NewProductForm = ({setShowNewProductForm}) => {
                 url: `https://recipes-app-32684-default-rtdb.firebaseio.com/products.json?auth=${token}`,
                 method: 'POST',
                 body: {
-                    name, amount, returnSecureToken: true
+                    name, amount
                 },
                 headers: {
                     'Content-Type': 'application/json'

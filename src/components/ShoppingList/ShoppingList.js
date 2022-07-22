@@ -61,7 +61,6 @@ const ShoppingList = () => {
 
     return (
         <section className={classes.card}>
-            {/*{isLoading && <LoadingSpinner/>}*/}
             {errorMessage && <Error errorMessage={errorMessage}/>}
             <ul className={classes.list}>
                 {products && products.map((product) => (
