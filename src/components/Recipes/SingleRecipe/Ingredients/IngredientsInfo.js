@@ -1,31 +1,20 @@
 import classes from './IngredientsInfo.module.css';
 import CustomButton from "../../../../UI/CustomButton";
-import {useEffect, useState} from "react";
-import IngredientsForm from "./IngredientsForm";
+import {useState} from "react";
 
 const IngredientsInfo = ({ingredients}) => {
     const [selectedIngredients, setSelectedIngredients] = useState([]);
 
-    const [showIngredientsForm, setShowIngredientsForm] = useState(false);
-
-    const showIngredientsFormHandler = () => {
-        // dispatch action to send stuff to firebase
-        setShowIngredientsForm(prevState => !prevState);
-    }
-
-    useEffect(() => {
-
-    }, [selectedIngredients]);
-
     const selectIngredient = (name, amount, e) => {
         if (e.target.checked) {
-            for (const ing of selectedIngredients) {
-                if (Object.values(ing).includes(name)) {
-                    return
-                }
+            const ingredientExists = selectedIngredients.some(ingredient => ingredient.name === name);
+            if (ingredientExists) {
+                return
             }
             setSelectedIngredients([{name, amount}, ...selectedIngredients]);
-            console.log(selectedIngredients);
+        } else if (!e.target.checked) {
+            const newSelectedIngredients = selectedIngredients.filter(ingredient => ingredient.name !== name);
+            setSelectedIngredients(newSelectedIngredients);
         }
     }
 
@@ -47,10 +36,8 @@ const IngredientsInfo = ({ingredients}) => {
                         </span>
                         </li>
                     </div>
-
                 ))}
             </ul>
-            {showIngredientsForm && <IngredientsForm setShowIngredientsForm={setShowIngredientsForm}/>}
         </div>
     )
 }
