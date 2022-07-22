@@ -4,6 +4,7 @@
     width: 95%;
     margin: 1rem auto;
     border-radius: 2rem;
+    height: auto;
     animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     display: grid;
 }
@@ -38,7 +39,6 @@
 }
 
 .preparation {
-    padding: 2rem;
     margin: 0.05rem 0.5rem 0.5rem 0.1rem;
     border-radius: 2rem;
     z-index: 1;

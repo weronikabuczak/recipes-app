@@ -1,12 +1,12 @@
 import classes from "./RecipeDetails.module.css";
 import {useParams} from "react-router-dom";
 import {useContext, useEffect, useState} from "react";
-import useHttp from "../../hooks/use-http";
-import AuthContext from "../../store/auth-context";
-import ShortRecipeInfo from "./ShortRecipeInfo";
-import IngredientsInfo from "./IngredientsInfo";
-import LoadingSpinner from "../../UI/LoadingSpinner";
-import Error from "../../UI/Error";
+import useHttp from "../../../hooks/use-http";
+import AuthContext from "../../../store/auth-context";
+import ShortRecipeInfo from "../Common/ShortRecipeInfo";
+import IngredientsInfo from "./Ingredients/IngredientsInfo";
+import LoadingSpinner from "../../../UI/LoadingSpinner";
+import Error from "../../../UI/Error";
 
 const RecipeDetails = () => {
     const {isLoading, errorMessage, sendRequest: getRecipe} = useHttp();
@@ -44,7 +44,7 @@ const RecipeDetails = () => {
                         <h4>{recipe.desc}</h4>
                     </header>
                     <ShortRecipeInfo recipe={recipe}/>
-                    <IngredientsInfo ingredients={ingredients} short={false}/>
+                    <IngredientsInfo ingredients={ingredients}/>
                 </div>
                 <div className={classes.preparation}>
                     <h1>Preparation</h1>

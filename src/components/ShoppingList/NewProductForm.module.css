@@ -1,0 +1,9 @@
+.products__actions {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.products__actions button {
+    margin-right: 0.5rem;
+}

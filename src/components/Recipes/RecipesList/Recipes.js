@@ -1,11 +1,11 @@
 import Recipe from "./Recipe";
 import classes from './Recipes.module.css';
-import useHttp from "../../hooks/use-http";
+import useHttp from "../../../hooks/use-http";
 import {useContext, useEffect, useState} from "react";
-import AuthContext from "../../store/auth-context";
-import LoadingSpinner from "../../UI/LoadingSpinner";
-import Error from "../../UI/Error";
-import CustomButton from "../../UI/CustomButton";
+import AuthContext from "../../../store/auth-context";
+import LoadingSpinner from "../../../UI/LoadingSpinner";
+import Error from "../../../UI/Error";
+import CustomButton from "../../../UI/CustomButton";
 
 const Recipes = () => {
     const {isLoading, errorMessage, sendRequest: getRecipes} = useHttp();

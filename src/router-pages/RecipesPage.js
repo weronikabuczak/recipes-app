@@ -1,4 +1,4 @@
-import Recipes from "../components/Recipes/Recipes";
+import Recipes from "../components/Recipes/RecipesList/Recipes";
 
 const RecipesPage = () => {
     return (

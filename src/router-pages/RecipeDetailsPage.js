@@ -1,4 +1,4 @@
-import RecipeDetails from "../components/Recipes/RecipeDetails";
+import RecipeDetails from "../components/Recipes/SingleRecipe/RecipeDetails";
 
 const RecipeDetailsPage = () => {
     return (

@@ -1,8 +1,8 @@
 import classes from './ShortRecipeInfo.module.css';
-import clockIcon from '../../assets/clock-icon.png';
-import diff1Icon from '../../assets/1diff.png';
-import diff2Icon from '../../assets/2diff.png';
-import diff3Icon from '../../assets/3diff.png';
+import clockIcon from '../../../assets/clock-icon.png';
+import diff1Icon from '../../../assets/1diff.png';
+import diff2Icon from '../../../assets/2diff.png';
+import diff3Icon from '../../../assets/3diff.png';
 
 const ShortRecipeInfo = ({recipe}) => {
 

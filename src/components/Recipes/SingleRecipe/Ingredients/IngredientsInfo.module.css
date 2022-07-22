@@ -1,0 +1,48 @@
+.ingredients {
+    background-color: #f5f4f4;
+    border-radius: 2rem;
+    padding: 1rem;
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.header {
+    font-size: 1.3rem;
+    padding-left: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.ingredients__list {
+    list-style: none;
+    width: 100%;
+    padding: 0.1rem;
+}
+
+.ingredients__list li {
+    border-bottom: #e3cabc 1px solid;
+    padding: 0.4rem;
+}
+
+.quantity {
+    font-weight: bold;
+    color: #e14747;
+    float: right;
+}
+
+.moreInfo {
+    background-color: white;
+    padding: 0.8rem 0.5rem;
+    border-radius: 1rem;
+}
+
+@media (max-width: 425px) {
+    .ingredients {
+        width: 100%;
+        margin: 0;
+    }
+    .ingredients__list {
+        width: 100%;
+        padding: 0;
+    }
+}

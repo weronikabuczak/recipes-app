@@ -31,13 +31,13 @@
     background-color: #439d7f;
 }
 
-/*.default-button.cancellation {*/
-/*    background-color: darksalmon;*/
-/*}*/
+.default-button.cancellation {
+    background-color: rgba(234, 36, 36, 0.98);
+}
 
-/*.default-button.cancellation:hover {*/
-/*    background-color: #ea7f5a;*/
-/*}*/
+.default-button.cancellation:hover {
+    background-color: rgba(255, 71, 71, 0.98);
+}
 
 @media (max-width: 425px) {
     .default-button {

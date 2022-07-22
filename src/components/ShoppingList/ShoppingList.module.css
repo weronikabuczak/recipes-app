@@ -4,6 +4,7 @@
     margin: 5rem auto;
     padding: 2rem;
     border-radius: 2rem;
+    animation: slide-bottom 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .list {
@@ -25,12 +26,12 @@
 .list__button {
     border-radius: 1rem;
     border: none;
-    background-color: #e14747;
+    background-color: #ff7c37;
     font-weight: bold;
     color: white;
-    margin: 0 0.5rem 0.2rem;
+    margin: 0 0.5rem 0.2rem 0.8rem;
     font-size: 1.2rem;
-    padding: 0.2rem 0.6rem;
+    padding: 0.2rem 0.4rem;
 }
 
 .list__button:hover:before {
@@ -40,5 +41,14 @@
 
 .list__button:before {
     content: 'X';
+}
+
+@keyframes slide-bottom {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
