@@ -4,24 +4,30 @@ import {useState} from "react";
 import useHttp from "../../../../hooks/use-http";
 import {useContext} from "react";
 import AuthContext from "../../../../store/auth-context";
+import LoadingSpinner from "../../../../UI/LoadingSpinner";
 
 const IngredientsInfo = ({ingredients}) => {
     const [selectedIngredients, setSelectedIngredients] = useState([]);
     const {isLoading, errorMessage, sendRequest: addIngredients} = useHttp();
     const authContext = useContext(AuthContext);
     const token = authContext.token;
+    console.log(selectedIngredients);
 
     const addIngredientsHandler = () => {
         console.log(selectedIngredients);
         console.log({selectedIngredients})
-        addIngredients({
-            url: `https://recipes-app-32684-default-rtdb.firebaseio.com/products.json?auth=${token}`,
-            method: 'POST',
-            body: selectedIngredients,
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
+        for (const ingredient of selectedIngredients) {
+            console.log(ingredient);
+            addIngredients({
+                url: `https://recipes-app-32684-default-rtdb.firebaseio.com/products.json?auth=${token}`,
+                method: 'POST',
+                body: ingredient,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+        }
+
     }
 
     const selectIngredient = (name, amount, e) => {
@@ -39,6 +45,7 @@ const IngredientsInfo = ({ingredients}) => {
 
     return (
         <div className={classes.ingredients}>
+            {isLoading && <LoadingSpinner/>}
             <header className={classes.header}>
                 Ingredients
                 <CustomButton confirmation onClick={addIngredientsHandler}>Add ingredients to shopping
