@@ -5,7 +5,6 @@ import NewProductForm from "./NewProductForm";
 import useHttp from "../../hooks/use-http";
 import {useContext, useEffect} from "react";
 import AuthContext from "../../store/auth-context";
-import LoadingSpinner from "../../UI/LoadingSpinner";
 import Error from "../../UI/Error";
 
 const ShoppingList = () => {
@@ -36,15 +35,20 @@ const ShoppingList = () => {
     const receiveData = (data) => {
         //redux?
         setRefreshAfterDelete(false);
-        const loadedProducts = [];
-        for (const key in data) {
-            loadedProducts.push({
-                id: key,
-                name: data[key].name,
-                amount: data[key].amount
-            })
-        }
-        setProducts(loadedProducts);
+        const products = Object.values(data);
+        const deduplicatedProducts = [];
+
+        products.forEach(item => {
+            const duplicatedProduct = deduplicatedProducts.find(addedItem => addedItem.name === item.name);
+            if (duplicatedProduct) {
+                duplicatedProduct.amount += +item.amount;
+            } else {
+                deduplicatedProducts.push({
+                    ...item
+                })
+            }
+        })
+        setProducts(deduplicatedProducts);
     };
 
     useEffect(() => {

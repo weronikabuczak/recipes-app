@@ -52,7 +52,7 @@ const IngredientsInfo = ({ingredients}) => {
                     list</CustomButton>
             </header>
             <ul className={classes.ingredients__list}>
-                {ingredients && Object.keys(ingredients).map((key, item) => (
+                {ingredients && Object.keys(ingredients).map((key) => (
                     <div>
                         <input type={"checkbox"} onClick={(e) => selectIngredient(key, ingredients[key], e)}/>
                         <li key={key}>
