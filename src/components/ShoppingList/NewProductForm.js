@@ -18,6 +18,7 @@ const NewProductForm = ({setShowNewProductForm}) => {
 
     const setUnitHandler = (e) => {
         setUnit(e.target.value);
+        console.log(unit);
     }
 
     const closeFormHandler = () => {
@@ -30,8 +31,9 @@ const NewProductForm = ({setShowNewProductForm}) => {
 
     const AddProductHandler = (e) => {
         e.preventDefault();
+        console.log(unit)
         const name = nameRef.current.value;
-        const amount = amountRef.current.value;
+        const amount = +amountRef.current.value;
         addProduct({
                 url: `https://recipes-app-32684-default-rtdb.firebaseio.com/products.json?auth=${token}`,
                 method: 'POST',
@@ -48,7 +50,7 @@ const NewProductForm = ({setShowNewProductForm}) => {
     return (
         <form onSubmit={AddProductHandler}>
             <CustomInput type='text' required label='Name of product' ref={nameRef}/>
-            <CustomInput type='text' label='Amount' ref={amountRef}/>
+            <CustomInput type='number' label='Amount' ref={amountRef}/>
                 <select className={classes.select} onChange={setUnitHandler}>
                     <option value="">No unit</option>
                     <option value="g">Gram</option>

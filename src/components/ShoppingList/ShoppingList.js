@@ -57,7 +57,7 @@ const ShoppingList = () => {
         products.forEach(item => {
             const duplicatedProduct = deduplicatedProducts.find(addedItem => addedItem.name === item.name);
             if (duplicatedProduct) {
-                duplicatedProduct.amount += +item.amount;
+                duplicatedProduct.amount += item.amount;
             } else {
                 deduplicatedProducts.push({
                     ...item
@@ -90,8 +90,8 @@ const ShoppingList = () => {
                             <button onClick={deleteProductHandler.bind(null, product.name)}
                                     className={classes['list__button']}/>
                         </span>
-                        <span>{product.amount}</span>
                         <span>{product.unit}</span>
+                        <span className={classes.amount}>{product.amount}</span>
                     </li>
                 ))}
             </ul>
