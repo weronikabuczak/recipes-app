@@ -7,3 +7,33 @@
 .products__actions button {
     margin-right: 0.5rem;
 }
+
+.input {
+    text-align: center;
+    margin: 0.8rem auto;
+}
+
+.select {
+    border-radius: 30px;
+    border: 1px solid #ead6d6;
+    height: 2.5rem;
+    width: 93%;
+    padding-left: 3%;
+}
+
+.select:focus, .select:active {
+    outline: 1px #969296 solid;
+}
+
+.select option {
+    padding: 0.4rem;
+    font-weight: bold;
+    display: block;
+}
+
+@media (max-width: 425px) {
+    .select {
+        width: 100%;
+        margin: 0.2rem auto;
+    }
+}
