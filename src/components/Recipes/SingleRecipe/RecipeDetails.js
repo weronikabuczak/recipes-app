@@ -29,6 +29,7 @@ const RecipeDetails = () => {
     }, [getRecipe, id, token]);
 
     const {ingredients} = recipe;
+    console.log(ingredients);
 
     return (
         <>
@@ -44,7 +45,7 @@ const RecipeDetails = () => {
                         <h4>{recipe.desc}</h4>
                     </header>
                     <ShortRecipeInfo recipe={recipe}/>
-                    <IngredientsInfo ingredients={ingredients}/>
+                    <IngredientsInfo key={recipe.id} ingredients={ingredients}/>
                 </div>
                 <div className={classes.preparation}>
                     <h1>Preparation</h1>

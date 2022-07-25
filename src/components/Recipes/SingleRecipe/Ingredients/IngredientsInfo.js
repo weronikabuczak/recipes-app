@@ -11,11 +11,8 @@ const IngredientsInfo = ({ingredients}) => {
     const {isLoading, errorMessage, sendRequest: addIngredients} = useHttp();
     const authContext = useContext(AuthContext);
     const token = authContext.token;
-    console.log(selectedIngredients);
 
     const addIngredientsHandler = () => {
-        console.log(selectedIngredients);
-        console.log({selectedIngredients})
         for (const ingredient of selectedIngredients) {
             console.log(ingredient);
             addIngredients({
@@ -31,12 +28,15 @@ const IngredientsInfo = ({ingredients}) => {
     }
 
     const selectIngredient = (name, amount, e) => {
+        const splitAmountAndUnit = amount.split(' ');
+        const splitAmount = splitAmountAndUnit[0];
+        const splitUnit = splitAmountAndUnit[1];
         if (e.target.checked) {
             const ingredientExists = selectedIngredients.some(ingredient => ingredient.name === name);
             if (ingredientExists) {
                 return
             }
-            setSelectedIngredients([{name, amount}, ...selectedIngredients]);
+            setSelectedIngredients([{name, amount: +splitAmount, unit: splitUnit}, ...selectedIngredients]);
         } else if (!e.target.checked) {
             const newSelectedIngredients = selectedIngredients.filter(ingredient => ingredient.name !== name);
             setSelectedIngredients(newSelectedIngredients);
@@ -54,7 +54,9 @@ const IngredientsInfo = ({ingredients}) => {
             <ul className={classes.ingredients__list}>
                 {ingredients && Object.keys(ingredients).map((key) => (
                     <div>
-                        <input type={"checkbox"} onClick={(e) => selectIngredient(key, ingredients[key], e)}/>
+                        <input type="checkbox"
+                               onClick={(e) => selectIngredient(key, ingredients[key], e)}/>
+
                         <li key={key}>
                             {key}
                             <span className={classes.quantity}>

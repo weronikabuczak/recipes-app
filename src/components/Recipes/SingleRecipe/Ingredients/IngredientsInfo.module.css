@@ -38,6 +38,7 @@
     border-radius: 1rem;
 }
 
+
 @media (max-width: 425px) {
     .ingredients {
         width: 100%;
