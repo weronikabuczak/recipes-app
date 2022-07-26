@@ -2,8 +2,7 @@
     background-color: #f5f4f4;
     border-radius: 2rem;
     padding: 1rem;
-    width: 90%;
-    margin: 2rem auto;
+    margin: 1rem auto;
 }
 
 .header {
@@ -47,5 +46,13 @@
     .ingredients__list {
         width: 100%;
         padding: 0;
+    }
+    .header {
+        display: inline-block;
+        text-align: center;
+    }
+    .ingredients__button {
+        width: 80%;
+        margin-top: 1rem;
     }
 }

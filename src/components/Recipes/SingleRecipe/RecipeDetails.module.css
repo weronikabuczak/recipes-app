@@ -1,30 +1,35 @@
 .card {
     background-color: white;
-    padding: 0.5rem;
+    padding: 2rem;
     width: 60%;
     margin: 2rem auto;
     border-radius: 2rem;
     display: grid;
-    grid-template-columns: 40% 60%;
-    gap: 8px;
-    grid-template-rows: 45% 55%;
+    grid-template-columns: 45% 55%;
+    gap: 20px;
     animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .img {
     width: 100%;
     height: 100%;
+    max-height: 350px;
     border-radius: 2rem;
     object-fit: cover;
-    box-shadow: #ccc 2px 2px 6px 1px;
+    margin: 1rem 0;
+    box-shadow: #ccc 2px 2px 3px 1px;
     grid-column: 1;
+    grid-row: 2;
+}
+
+.header {
+    grid-column: 1/3;
+    grid-row: 1;
 }
 
 .main {
     grid-column: 2;
-    grid-row: 1;
-    padding: 1rem;
-    margin: 0.4rem 0;
+    grid-row: 2;
     z-index: 1;
 }
 
@@ -45,7 +50,7 @@
 .preparation {
     z-index: -1;
     grid-column: 1/3;
-    grid-row: 2;
+    grid-row: 3;
     padding: 2rem;
     margin: 0.05rem 0.5rem 0 0.1rem;
     border-radius: 2rem;
@@ -94,6 +99,16 @@
         width: 95%;
     }
 }
+
+@media (min-width: 2560px) {
+    .card {
+        width: 50%;
+    }
+    .preparation {
+        margin: 1rem 0;
+    }
+}
+
 
 
 

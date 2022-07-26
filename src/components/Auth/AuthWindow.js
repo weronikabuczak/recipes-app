@@ -24,7 +24,7 @@ const AuthWindow = () => {
 
     const receiveData = (data) => {
         authContext.login(data.idToken);
-        history.replace('/home');
+        history.replace('/recipes');
     }
 
     const checkPasswordIsValid = (password) => {

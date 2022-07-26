@@ -9,7 +9,6 @@ const NavigationBar = () => {
 
     const logoutHandler = () => {
         authContext.logout();
-        console.log('logged out')
     }
 
     return (
@@ -19,10 +18,6 @@ const NavigationBar = () => {
             </Link>
             <nav>
                 <ul>
-                    {isLoggedIn &&
-                        <li>
-                            <Link to='/home'>Home</Link>
-                        </li>}
                     {isLoggedIn &&
                         <li>
                             <Link to='/recipes'>Recipes</Link>

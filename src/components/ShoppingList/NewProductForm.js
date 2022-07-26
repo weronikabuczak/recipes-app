@@ -55,6 +55,8 @@ const NewProductForm = ({setShowNewProductForm}) => {
                     <option value="">No unit</option>
                     <option value="g">Gram</option>
                     <option value="ml">Millilitre</option>
+                    <option value="tsp">Teaspoon</option>
+                    <option value="tsp">Tablespoon</option>
                 </select>
             <div className={classes['products__actions']}>
                 <CustomButton confirmation type='submit'>Submit</CustomButton>

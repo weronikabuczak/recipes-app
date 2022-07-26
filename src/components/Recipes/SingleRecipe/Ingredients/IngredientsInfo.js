@@ -8,13 +8,13 @@ import LoadingSpinner from "../../../../UI/LoadingSpinner";
 
 const IngredientsInfo = ({ingredients}) => {
     const [selectedIngredients, setSelectedIngredients] = useState([]);
+    const [ingredientsSent, setIngredientsSent] = useState(false);
     const {isLoading, errorMessage, sendRequest: addIngredients} = useHttp();
     const authContext = useContext(AuthContext);
     const token = authContext.token;
 
     const addIngredientsHandler = () => {
         for (const ingredient of selectedIngredients) {
-            console.log(ingredient);
             addIngredients({
                 url: `https://recipes-app-32684-default-rtdb.firebaseio.com/products.json?auth=${token}`,
                 method: 'POST',
@@ -24,7 +24,7 @@ const IngredientsInfo = ({ingredients}) => {
                 }
             })
         }
-
+        setIngredientsSent(true);
     }
 
     const selectIngredient = (name, amount, e) => {
@@ -46,9 +46,10 @@ const IngredientsInfo = ({ingredients}) => {
     return (
         <div className={classes.ingredients}>
             {isLoading && <LoadingSpinner/>}
+            {ingredientsSent && <p>Ingredients have been sent successfully!</p>}
             <header className={classes.header}>
                 Ingredients
-                <CustomButton confirmation onClick={addIngredientsHandler}>Add ingredients to shopping
+                <CustomButton className={classes['ingredients__button']} confirmation onClick={addIngredientsHandler}>Add ingredients to shopping
                     list</CustomButton>
             </header>
             <ul className={classes.ingredients__list}>

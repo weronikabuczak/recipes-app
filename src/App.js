@@ -22,11 +22,7 @@ function App() {
                 </Route>
                 <Route path='/' exact>
                     {!isLoggedIn && <Redirect to='/auth'/>}
-                    {isLoggedIn && <Redirect to='/home'/>}
-                </Route>
-                <Route path='/home'>
-                    {!isLoggedIn && <Redirect to='/auth'/>}
-                    <HomePage/>
+                    {isLoggedIn && <Redirect to='/recipes'/>}
                 </Route>
                 <Route path='/recipes' exact>
                     {!isLoggedIn && <Redirect to='/auth'/>}

@@ -29,8 +29,6 @@ const RecipeDetails = () => {
     }, [getRecipe, id, token]);
 
     const {ingredients} = recipe;
-    console.log(ingredients);
-
     return (
         <>
             <div>
@@ -39,12 +37,12 @@ const RecipeDetails = () => {
             </div>
             <section className={classes.card}>
                 <img className={classes.img} src={recipe.img} alt='pic1'/>
-                <div className={classes.main}>
                     <header className={classes.header}>
                         <h2>{recipe.name}</h2>
                         <h4>{recipe.desc}</h4>
+                        <ShortRecipeInfo recipe={recipe}/>
                     </header>
-                    <ShortRecipeInfo recipe={recipe}/>
+                <div className={classes.main}>
                     <IngredientsInfo key={recipe.id} ingredients={ingredients}/>
                 </div>
                 <div className={classes.preparation}>
