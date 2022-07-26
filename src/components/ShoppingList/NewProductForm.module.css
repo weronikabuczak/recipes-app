@@ -13,12 +13,18 @@
     margin: 0.8rem auto;
 }
 
+.select__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .select {
     border-radius: 30px;
     border: 1px solid #ead6d6;
     height: 2.5rem;
-    width: 93%;
     padding-left: 3%;
+    width: 93%;
 }
 
 .select:focus, .select:active {

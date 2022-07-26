@@ -49,15 +49,19 @@ const NewProductForm = ({setShowNewProductForm}) => {
 
     return (
         <form onSubmit={AddProductHandler}>
-            <CustomInput type='text' required label='Name of product' ref={nameRef}/>
-            <CustomInput type='number' label='Amount' ref={amountRef}/>
-                <select className={classes.select} onChange={setUnitHandler}>
-                    <option value="">No unit</option>
-                    <option value="g">Gram</option>
-                    <option value="ml">Millilitre</option>
-                    <option value="tsp">Teaspoon</option>
-                    <option value="tsp">Tablespoon</option>
-                </select>
+            <div className={classes['products__inputs']}>
+                <CustomInput type='text' required label='Name of product' ref={nameRef}/>
+                <CustomInput type='number' label='Amount' ref={amountRef}/>
+                <div className={classes['select__container']}>
+                    <select className={classes.select} onChange={setUnitHandler}>
+                        <option value="">No unit</option>
+                        <option value="g">Gram</option>
+                        <option value="ml">Millilitre</option>
+                        <option value="tsp">Teaspoon</option>
+                        <option value="tsp">Tablespoon</option>
+                    </select>
+                </div>
+            </div>
             <div className={classes['products__actions']}>
                 <CustomButton confirmation type='submit'>Submit</CustomButton>
                 <CustomButton type='button' onClick={closeFormHandler} cancellation>Cancel</CustomButton>

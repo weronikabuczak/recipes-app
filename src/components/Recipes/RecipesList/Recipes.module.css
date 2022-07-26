@@ -28,3 +28,9 @@
         width: 100%;
     }
 }
+
+@media (max-width: 1440px) {
+    .recipes__list {
+        width: 98%;
+    }
+}
