@@ -24,9 +24,7 @@ const ShoppingList = () => {
     }
 
     const deleteProductHandler = (name) => {
-        console.log(productsNoDup);
         const findName = productsNoDup.filter((product => product.name === name));
-        console.log(findName);
         for(const item of findName) {
             deleteProduct({
                 url: `https://recipes-app-32684-default-rtdb.firebaseio.com/products/${item.id}.json?auth=${token}`,
@@ -82,6 +80,7 @@ const ShoppingList = () => {
         <section className={classes.card}>
             {isLoading && <LoadingSpinner/>}
             {errorMessage && <Error errorMessage={errorMessage}/>}
+            <h1>Shopping list</h1>
             <ul className={classes.list}>
                 {products && products.map((product) => (
                     <li key={product.id}>

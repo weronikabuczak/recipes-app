@@ -1,10 +1,15 @@
 .card {
     background-color: white;
-    width: 40%;
+    width: 30%;
     margin: 5rem auto;
     padding: 2rem;
     border-radius: 2rem;
     animation: slide-bottom 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.card h1 {
+    text-align: center;
+    font-size: 1.8rem;
 }
 
 .list {
@@ -54,6 +59,31 @@
     }
     100% {
         transform: translateY(0);
+    }
+}
+
+@media(max-width: 1024px) {
+    .card {
+        width: 70%;
+    }
+}
+
+@media(max-width: 1440px) {
+    .card {
+        width: 50%;
+    }
+}
+
+@media(max-width: 425px) {
+    .card {
+        width: 95%;
+        padding: 0.8rem;
+    }
+    .list {
+        font-size: 1.2rem;
+    }
+    .card h1 {
+        font-size: 1.5rem;
     }
 }
 

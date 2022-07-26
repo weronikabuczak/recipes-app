@@ -14,3 +14,9 @@ body {
   background-image: linear-gradient(to right, #ffe8b8, rgba(255, 116, 93, 0.85));
   border-radius: 1rem;
 }
+
+@media(max-width: 425px) {
+  html {
+    padding: 0;
+  }
+}

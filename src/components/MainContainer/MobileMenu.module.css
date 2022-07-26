@@ -1,0 +1,50 @@
+.menu__container {
+    position: fixed;
+    z-index: 1;
+    margin: 1rem auto;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    animation: flip-in-hor-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.menu__container ul {
+    list-style: none;
+    padding: 1rem;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.menu__container li {
+    margin: 0.6rem;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    background-color: #ec6b3d;
+    color: white;
+    text-shadow: 1px 1px black;
+    padding: 1rem;
+    border-radius: 2rem;
+    font-weight: bold;
+}
+
+.menu__container a {
+    text-decoration: none;
+    color: white;
+}
+
+@media (min-width: 426px) {
+    .menu__container {
+        display: none;
+    }
+}
+
+@keyframes flip-in-hor-top {
+    0% {
+        transform: rotateX(-80deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotateX(0);
+        opacity: 1;
+    }
+}

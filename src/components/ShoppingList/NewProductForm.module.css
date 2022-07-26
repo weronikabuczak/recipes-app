@@ -1,7 +1,7 @@
 .products__actions {
     display: flex;
     width: 80%;
-    margin: 0 auto;
+    margin: 0.8rem auto 0;
 }
 
 .products__actions button {
