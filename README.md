@@ -1,6 +1,31 @@
-# Getting Started with Create React App
+# Recipes App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This application is for browsing and creating your own recipes. It also allowes you to create a shopping list. There is also a possibility to add chosen ingredients from recipes to shopping list.
+The app is created with React v18.2 and it includes only frontend, for basic backend and database purposes the Realtime Database is being used.
+
+Completed features: 
+- Allow user to create new account and login with Firebase Authentication - validation and error handling included,
+- Allow user to browse the recipes and add ingredients from specific recipe to shopping list,
+- Allow user to add and delete products from shopping list,
+- The application is made with RWD (responsive web design). 
+
+TODO features:
+- Allow user to create his own shopping list and maybe share it with other users,
+- Allow user to edit the products on the shopping list (?),
+- Allow user to create, edit and delete his own recipe,
+- Allow user to change the password or the user data in the Profile section,
+- Password reminder,
+- Add auto logout after certain time.
+
+Future possible features:
+- Create the possibility of purchase chosen recipes or products (on a delivery company basis),
+- Expand the user profile with more information,
+- Add Redux when it will be needed.
+
+The application should be hosted on a server soon.
+
+![image](https://i.ibb.co/kqW16V4/1.png)
+
 
 ## Available Scripts
 
@@ -29,42 +54,3 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
