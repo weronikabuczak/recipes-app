@@ -23,7 +23,8 @@ const AuthWindow = () => {
     };
 
     const receiveData = (data) => {
-        authContext.login(data.idToken);
+        console.log(data)
+        authContext.login(data.idToken, data.localId);
         history.replace('/recipes');
     }
 
@@ -35,7 +36,6 @@ const AuthWindow = () => {
         } else {
             setPasswordIsValid(false);
             setMessage("Password must be 8 characters long and must contain at least one letter, one number and one special character.")
-            //todo red frame?
         }
     }
 

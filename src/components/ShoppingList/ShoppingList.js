@@ -7,14 +7,16 @@ import {useContext, useEffect} from "react";
 import AuthContext from "../../store/auth-context";
 import Error from "../../UI/Error";
 import LoadingSpinner from "../../UI/LoadingSpinner";
+import Message from "../../UI/Message";
 
 const ShoppingList = () => {
-
     const [showNewProductForm, setShowNewProductForm] = useState(false);
+    const [listIsEmpty, setListIsEmpty] = useState(false);
     const {isLoading, errorMessage, sendRequest: getProducts} = useHttp();
     const {sendRequest: deleteProduct} = useHttp();
     const authContext = useContext(AuthContext);
     const token = authContext.token;
+    const localId = authContext.localId;
     const [products, setProducts] = useState([]);
     const [productsNoDup, setProductsNoDup] = useState([]);
     const [refreshAfterDelete, setRefreshAfterDelete] = useState(false);
@@ -38,7 +40,11 @@ const ShoppingList = () => {
     }
 
     const receiveData = (data) => {
-        //redux?
+        if (data === null) {
+            setListIsEmpty(true);
+            return
+        }
+        setListIsEmpty(false);
         setRefreshAfterDelete(false);
         const loadedProducts = [];
         for (const key in data) {
@@ -67,7 +73,7 @@ const ShoppingList = () => {
 
     useEffect(() => {
             getProducts({
-                url: `https://recipes-app-32684-default-rtdb.firebaseio.com/products.json?auth=${token}`,
+                url: `https://recipes-app-32684-default-rtdb.firebaseio.com/${localId}/products.json?auth=${token}`,
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -81,6 +87,7 @@ const ShoppingList = () => {
             {isLoading && <LoadingSpinner/>}
             {errorMessage && <Error errorMessage={errorMessage}/>}
             <h1>Shopping list</h1>
+            {listIsEmpty && <Message>Your list is empty</Message>}
             <ul className={classes.list}>
                 {products && products.map((product) => (
                     <li key={product.id}>

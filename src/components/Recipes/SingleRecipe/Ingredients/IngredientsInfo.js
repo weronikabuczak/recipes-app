@@ -12,11 +12,12 @@ const IngredientsInfo = ({ingredients}) => {
     const {isLoading, errorMessage, sendRequest: addIngredients} = useHttp();
     const authContext = useContext(AuthContext);
     const token = authContext.token;
+    const localId = authContext.localId;
 
     const addIngredientsHandler = () => {
         for (const ingredient of selectedIngredients) {
             addIngredients({
-                url: `https://recipes-app-32684-default-rtdb.firebaseio.com/products.json?auth=${token}`,
+                url: `https://recipes-app-32684-default-rtdb.firebaseio.com/${localId}/products.json?auth=${token}`,
                 method: 'POST',
                 body: ingredient,
                 headers: {

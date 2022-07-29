@@ -13,12 +13,12 @@ const NewProductForm = ({setShowNewProductForm}) => {
     const [unit, setUnit] = useState();
     const authContext = useContext(AuthContext);
     const token = authContext.token;
+    const localId = authContext.localId;
     const nameRef = useRef();
     const amountRef = useRef();
 
     const setUnitHandler = (e) => {
         setUnit(e.target.value);
-        console.log(unit);
     }
 
     const closeFormHandler = () => {
@@ -31,11 +31,10 @@ const NewProductForm = ({setShowNewProductForm}) => {
 
     const AddProductHandler = (e) => {
         e.preventDefault();
-        console.log(unit)
         const name = nameRef.current.value;
         const amount = +amountRef.current.value;
         addProduct({
-                url: `https://recipes-app-32684-default-rtdb.firebaseio.com/products.json?auth=${token}`,
+                url: `https://recipes-app-32684-default-rtdb.firebaseio.com/${localId}/products.json?auth=${token}`,
                 method: 'POST',
                 body: {
                     name, amount, unit
