@@ -4,14 +4,11 @@
 
 html {
   font-family: 'Roboto', sans-serif;
-  background-color: white;
-  padding: 0 1rem 2rem;
+  background-image: linear-gradient(to right, #ffe8b8, rgba(255, 116, 93, 0.85));
 }
 
 body {
   margin: 0;
-  padding: 0 0 18rem;
-  background-image: linear-gradient(to right, #ffe8b8, rgba(255, 116, 93, 0.85));
   border-radius: 1rem;
 }
 

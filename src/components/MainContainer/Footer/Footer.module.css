@@ -1,0 +1,16 @@
+.footer {
+    background-color: white;
+    text-align: center;
+    padding: 1.3rem;
+    box-shadow: 1px 5px 15px 1px #8f8585;
+}
+
+.footer span {
+    font-size: 1.8rem;
+    padding-right: 1rem;
+    font-weight: bold;
+}
+
+.footer a img {
+    vertical-align: text-bottom;
+}

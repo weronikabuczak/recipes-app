@@ -2,8 +2,8 @@
     background-color: white;
     padding: 2rem;
     width: 60%;
-    margin: 2rem auto;
     border-radius: 2rem;
+    margin: 5rem auto;
     display: grid;
     grid-template-columns: 45% 55%;
     gap: 20px;

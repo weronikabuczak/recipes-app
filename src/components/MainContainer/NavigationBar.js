@@ -15,7 +15,7 @@ const NavigationBar = () => {
     return (
         <>
             <header className={classes.header}>
-                <Link to='/home'>
+                <Link to='/recipes'>
                     <div className={classes.title}>Recipes App</div>
                 </Link>
                 <NavigationBarItems/>
