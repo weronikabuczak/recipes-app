@@ -1,7 +1,7 @@
 .header {
     width: 70%;
     height: 6rem;
-    background-color: #ffffff;
+    background-color: #f9fcfc;
     display: flex;
     position: sticky;
     z-index: 1;
@@ -10,6 +10,7 @@
     margin: 0 auto;
     padding: 0 10%;
     box-shadow: 1px 1px 8px 1px #d26969;
+    border-radius: 0 0 10px 10px;
 }
 
 .header ul {
@@ -21,8 +22,8 @@
 
 .header li {
     margin-right: 0.8rem;
-    font-size: 1.1rem;
-    background-color: rgba(255, 209, 136, 0.76);
+    font-size: 1.3rem;
+    background-color: rgb(255, 239, 138);
     padding: 1rem;
     border-radius: 1rem;
     background-size: 300% 100%;
@@ -31,12 +32,12 @@
 }
 
 .header li:hover {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     cursor: pointer;
     animation: nav-item 0.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
     background-position: 100% 0;
     transition: all .4s ease-in-out;
-    background-image: linear-gradient(to right, #F8B6A3, #ecdfdd, #fff2f2, #F8B6A3);
+    background-image: linear-gradient(to right, #f8bfab, #fffa81, #fff2f2, #ff9b7b);
 }
 
 
@@ -48,7 +49,7 @@
 .title {
     font-size: 3rem;
     font-weight: bold;
-    color: #9f0000;
+    color: #850404;
     white-space: nowrap;
     text-shadow: 1px 1px orange;
     margin-right: 3rem;

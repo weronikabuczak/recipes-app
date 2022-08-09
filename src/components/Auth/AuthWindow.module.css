@@ -6,10 +6,15 @@
     text-align: center;
     align-items: center;
     background-color: #F9F9F9;
+    box-shadow: 1px 1px 10px 1px #d3b1b1;
 }
 
 .auth header {
     font-size: 1.3rem;
+}
+
+.actions {
+    margin-top: 1.5rem;
 }
 
 @media (max-width: 1300px) {

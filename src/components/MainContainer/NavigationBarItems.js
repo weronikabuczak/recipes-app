@@ -8,6 +8,7 @@ const NavigationBarItems = (props) => {
 
     const logoutHandler = () => {
         authContext.logout();
+        hideMenuHandler()
     }
 
     const hideMenuHandler = () => {
@@ -30,7 +31,7 @@ const NavigationBarItems = (props) => {
                         <Link to='/profile'>Profile</Link>
                     </li>}
                 {isLoggedIn &&
-                    <li onClick={logoutHandler} onClick={hideMenuHandler}>
+                    <li onClick={logoutHandler}>
                         Logout
                     </li>}
             </ul>

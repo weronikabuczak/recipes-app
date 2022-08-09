@@ -43,15 +43,17 @@ const Recipes = () => {
         [getRecipes, token])
 
     return (
-        <section className={classes.recipes}>
+        <section>
             <header className={classes.header}>
+                <h4>Public recipes</h4>
+                    <CustomButton className={classes['recipes__button--add']}>Add new recipe</CustomButton>
                 {isLoading && <LoadingSpinner/>}
                 {errorMessage && <Error errorMessage={errorMessage}/>}
             </header>
-            <CustomButton className={classes['recipes__button--add']}>Add new recipe</CustomButton>
+            {/*<CustomButton className={classes['recipes__button--add']}>Add new recipe</CustomButton>*/}
             <div className={classes.recipes__list}>
                 {recipes && recipes.map((recipe) => (
-                        <Recipe key={recipe.id} recipe={recipe}/>
+                    <Recipe key={recipe.id} recipe={recipe}/>
                 ))}
             </div>
         </section>

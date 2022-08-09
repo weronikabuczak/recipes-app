@@ -23,7 +23,6 @@ const AuthWindow = () => {
     };
 
     const receiveData = (data) => {
-        console.log(data)
         authContext.login(data.idToken, data.localId);
         history.replace('/recipes');
     }
@@ -71,7 +70,7 @@ const AuthWindow = () => {
                 <CustomInput type='email' id='email' required label='Email' ref={emailRef}/>
                 <CustomInput type='password' id='password' required label='Password'
                              ref={passwordRef}/>
-                <div>
+                <div className={classes.actions}>
                     <CustomButton confirmation>{isLoginWindow ? 'Login' : 'Create account'}</CustomButton>
                     <CustomButton type='button' onClick={switchAuthHandler}>
                         {isLoginWindow ? 'Create new account' : 'Login with existing account'}

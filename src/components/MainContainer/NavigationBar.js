@@ -18,7 +18,7 @@ const NavigationBar = () => {
                 <Link to='/recipes'>
                     <div className={classes.title}>Recipes App</div>
                 </Link>
-                <NavigationBarItems/>
+                <NavigationBarItems setShowMenu={setShowMenu}/>
                 <CustomButton onClick={toggleMenuHandler} className={classes['menu__button']}>Menu</CustomButton>
             </header>
             {showMenu && <MobileMenu showMenu={showMenu} setShowMenu={setShowMenu}/>}

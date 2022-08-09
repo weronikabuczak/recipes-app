@@ -1,6 +1,30 @@
 .header {
+    width: 50%;
+    background-color: transparent;
+    border: 1px solid white;
+    margin: 3rem auto 0;
+    border-radius: 2rem;
+    padding: 0.3rem;
+    font-size: 2rem;
+    white-space: nowrap;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+}
+
+.header h4 {
+    margin: 0;
+    align-self: center;
+    border-right: 1px solid white;
+}
+
+.header button {
     width: 60%;
-    }
+    height: 95%;
+    align-self: center;
+    grid-column: 3;
+    font-size: 1.1rem;
+}
 
 .recipes__list {
     display: grid;
@@ -11,8 +35,6 @@
 }
 
 .recipes__button--add {
-    margin-top: 2rem;
-    width: 20%;
 }
 
 
