@@ -6,12 +6,14 @@ import AuthContext from "../../../store/auth-context";
 import LoadingSpinner from "../../../UI/LoadingSpinner";
 import Error from "../../../UI/Error";
 import CustomButton from "../../../UI/CustomButton";
+import {useHistory} from "react-router-dom";
 
 const Recipes = () => {
     const {isLoading, errorMessage, sendRequest: getRecipes} = useHttp();
     const authContext = useContext(AuthContext);
     const token = authContext.token;
     const [recipes, setRecipes] = useState([]);
+    const history = useHistory();
 
     const receiveData = (data) => {
         //redux?
@@ -42,15 +44,18 @@ const Recipes = () => {
         },
         [getRecipes, token])
 
+    const addRecipeHandler = () => {
+        history.replace('/newRecipe');
+    }
+
     return (
         <section>
             <header className={classes.header}>
                 <h4>Public recipes</h4>
-                    <CustomButton className={classes['recipes__button--add']}>Add new recipe</CustomButton>
+                    <CustomButton onClick={addRecipeHandler} className={classes['recipes__button--add']}>Add new recipe</CustomButton>
                 {isLoading && <LoadingSpinner/>}
                 {errorMessage && <Error errorMessage={errorMessage}/>}
             </header>
-            {/*<CustomButton className={classes['recipes__button--add']}>Add new recipe</CustomButton>*/}
             <div className={classes.recipes__list}>
                 {recipes && recipes.map((recipe) => (
                     <Recipe key={recipe.id} recipe={recipe}/>

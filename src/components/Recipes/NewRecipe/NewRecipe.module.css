@@ -1,0 +1,19 @@
+.card {
+    background-color: #ffedd6;
+    padding: 2rem;
+    margin: 1rem auto;
+    width: 70%;
+    border-radius: 2rem;
+    animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.form {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.card h1 {
+    text-align: center;
+    font-size: 1.7rem;
+}

@@ -50,7 +50,7 @@ const NewProductForm = ({setShowNewProductForm}) => {
         <form onSubmit={AddProductHandler}>
             <div className={classes['products__inputs']}>
                 <CustomInput type='text' required label='Name of product' ref={nameRef}/>
-                <CustomInput type='number' label='Amount' ref={amountRef}/>
+                <CustomInput type='number' required label='Amount' ref={amountRef}/>
                 <div className={classes['select__container']}>
                     <select className={classes.select} onChange={setUnitHandler}>
                         <option value="">No unit</option>
