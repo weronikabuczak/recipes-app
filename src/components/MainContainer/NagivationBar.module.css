@@ -1,7 +1,7 @@
 .header {
-    width: 70%;
+    width: min-content;
     height: 6rem;
-    background-color: #f9fcfc;
+    background-color: white;
     display: flex;
     position: sticky;
     z-index: 1;
@@ -9,7 +9,7 @@
     align-items: center;
     margin: 0 auto;
     padding: 0 10%;
-    box-shadow: 1px 1px 8px 1px #cc9d9d;
+    box-shadow: 1px 1px 12px 1px #cc9d9d;
     border-radius: 0 0 10px 10px;
 }
 
@@ -23,7 +23,8 @@
 .header li {
     margin-right: 0.8rem;
     font-size: 1.3rem;
-    background-color: rgb(255, 245, 138);
+    box-shadow: 1px 1px 5px 1px #ddd;
+    background-color: rgba(255, 202, 133, 0.53);
     padding: 1rem;
     border-radius: 1rem;
     background-size: 300% 100%;
@@ -32,14 +33,12 @@
 }
 
 .header li:hover {
-    font-size: 1.4rem;
     cursor: pointer;
-    animation: nav-item 0.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: nav-item 0.2s cubic-bezier(1, 0.575, 0.565, 1) both;
     background-position: 100% 0;
     transition: all .4s ease-in-out;
-    background-image: linear-gradient(to right, #f8bfab, #fffa81, #fff2f2, #ff9b7b);
+    background-image: linear-gradient(to right, #d3eca8, #fffbaf, #fcaa81);
 }
-
 
 .header a {
     text-decoration: none;

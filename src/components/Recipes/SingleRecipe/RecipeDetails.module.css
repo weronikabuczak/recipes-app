@@ -20,6 +20,11 @@
     box-shadow: #ccc 2px 2px 3px 1px;
     grid-column: 1;
     grid-row: 2;
+    transition: transform 1s;
+}
+
+img:hover {
+    transform: scale(1.04);
 }
 
 .header {
@@ -38,7 +43,7 @@
 }
 
 .header h2 {
-    font-size: 2rem;
+    font-size: 3rem;
     margin: 0.2rem;
 }
 
@@ -54,7 +59,7 @@
     padding: 2rem;
     margin: 0.05rem 0.5rem 0 0.1rem;
     border-radius: 2rem;
-    background-color: rgba(255, 224, 214, 0.52);
+    background-color: rgba(238, 238, 238, 0.52);
     animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
