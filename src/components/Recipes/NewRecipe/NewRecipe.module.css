@@ -17,3 +17,21 @@
     text-align: center;
     font-size: 1.7rem;
 }
+
+.select__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.select {
+    border-radius: 30px;
+    border: 1px solid #ead6d6;
+    height: 2.5rem;
+    padding-left: 3%;
+    width: 93%;
+}
+
+.select:focus, .select:active {
+    outline: 1px #969296 solid;
+}

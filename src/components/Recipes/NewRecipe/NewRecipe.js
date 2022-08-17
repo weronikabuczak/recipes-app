@@ -1,5 +1,4 @@
 import classes from './NewRecipe.module.css';
-import CustomButton from "../../../UI/CustomButton";
 import CustomInput from "../../../UI/CustomInput";
 
 const NewRecipe = () => {
@@ -9,20 +8,19 @@ const NewRecipe = () => {
             <form className={classes.form}>
                 <div>
                     <CustomInput label="Name" required type="text" maxLength='30'/>
-                    <label>Name</label>
-                    <input type="text" maxLength='30'/>
                 </div>
                 <div>
-                    <label>Short description</label>
-                    <input type="text" maxLength='50'/>
+                    <CustomInput label="Short description" required type="text" maxLength='50'/>
+                </div>
+                <div className={classes['select__container']}>
+                    <select className={classes.select}>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                    </select>
                 </div>
                 <div>
-                    <label>Difficulty</label>
-                    <input/>
-                </div>
-                <div>
-                    <label>Time</label>
-                    <input/>
+                    <CustomInput label="Time" required type="text" maxLength='50'/>
                 </div>
                 <div>
                     <label>Preparation</label>

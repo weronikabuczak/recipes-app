@@ -4,7 +4,7 @@ import classes from './CustomInput.module.css';
 const CustomInput = React.forwardRef((props, ref) => {
     return (
         <div className={classes.input}>
-            <input ref={ref} {...props.input} {...props} />
+            <input ref={ref} {...props} placeholder={props.label} />
         </div>
     )
 });

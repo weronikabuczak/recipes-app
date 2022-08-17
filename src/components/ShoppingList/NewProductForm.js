@@ -52,6 +52,7 @@ const NewProductForm = ({setShowNewProductForm}) => {
                 <CustomInput type='text' required label='Name of product' ref={nameRef}/>
                 <CustomInput type='number' required label='Amount' ref={amountRef}/>
                 <div className={classes['select__container']}>
+                    {/*todo custom select*/}
                     <select className={classes.select} onChange={setUnitHandler}>
                         <option value="">No unit</option>
                         <option value="g">Gram</option>
