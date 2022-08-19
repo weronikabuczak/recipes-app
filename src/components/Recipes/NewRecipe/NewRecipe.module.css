@@ -35,3 +35,21 @@
 .select:focus, .select:active {
     outline: 1px #969296 solid;
 }
+
+.list {
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    color: #79362b;
+    border-bottom: 1px solid #ccc;
+    list-style-type: none;
+    width: 60%;
+}
+
+.deleteIngredient__button {
+    border: none;
+    background-color: #ea6d6d;
+    color: white;
+    border-radius: 1rem;
+    padding: 0.4rem;
+    margin-left: 1rem;
+}
