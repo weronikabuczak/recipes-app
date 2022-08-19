@@ -28,6 +28,7 @@ const ShoppingList = () => {
     const deleteProductHandler = (name) => {
         const findName = productsNoDup.filter((product => product.name === name));
         for(const item of findName) {
+            console.log(item.id)
             deleteProduct({
                 url: `https://recipes-app-32684-default-rtdb.firebaseio.com/products/${item.id}.json?auth=${token}`,
                 method: 'DELETE',

@@ -2,7 +2,6 @@ import classes from './NewRecipe.module.css';
 import CustomInput from "../../../UI/CustomInput";
 import IngredientsForm from "./IngredientsForm";
 import {useRef, useState} from "react";
-import CustomButton from "../../../UI/CustomButton";
 
 const NewRecipe = () => {
     const nameRef = useRef();
@@ -10,6 +9,10 @@ const NewRecipe = () => {
     const [ingredients, setIngredients] = useState({});
     console.log(ingredients);
 
+    const deleteIngredientHandler = (key) => {
+        console.log('delete')
+        delete ingredients[key];
+    }
 
     return (
         <section className={classes.card}>
@@ -42,7 +45,7 @@ const NewRecipe = () => {
                     {ingredients && Object.keys(ingredients).map((key) => (
                         <li className={classes.list}>
                             {key} - {ingredients[key]}
-                            <button className={classes['deleteIngredient__button']}>Delete</button>
+                            <button onClick={deleteIngredientHandler.bind(null, key)} className={classes['deleteIngredient__button']}>Delete</button>
                         </li>
                     ))}
                 </ul>
