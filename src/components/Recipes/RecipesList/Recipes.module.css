@@ -43,6 +43,9 @@
         grid-template-columns: repeat(2, 50%);
         width: 95%;
     }
+    .header {
+        display: inline;
+    }
 }
 
 @media (max-width: 425px) {
