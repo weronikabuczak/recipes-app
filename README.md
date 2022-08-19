@@ -22,9 +22,15 @@ Future possible features:
 - Expand the user profile with more information,
 - Add Redux when it will be needed.
 
-The application should be hosted on a server soon.
 
-![image](https://i.ibb.co/kqW16V4/1.png)
+![image](images/login.png)
+![image](images/main.png)
+![image](images/recipe.png)
+![image](images/ingredients.png)
+![image](images/list.png)
+![image](images/adding.png)
+![image](images/result.png)
+
 
 
 ## Available Scripts
