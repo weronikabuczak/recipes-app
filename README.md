@@ -22,14 +22,32 @@ Future possible features:
 - Expand the user profile with more information,
 - Add Redux when it will be needed.
 
-
+Login page - Firebase Authentication:
 ![image](images/login.png)
+
+Main recipes page:
 ![image](images/main.png)
+
+Recipe details:
 ![image](images/recipe.png)
+
+Adding ingredients to the shopping list:
 ![image](images/ingredients.png)
+
+Shopping list after adding ingredients:
 ![image](images/list.png)
+
+Adding more flour to the list:
+
 ![image](images/adding.png)
 ![image](images/result.png)
+
+Mobile version of the main page:
+![image](images/mobile.png)
+
+Mobile view of the recipe: 
+![image](images/mobileRecipe.png)
+
 
 
 
