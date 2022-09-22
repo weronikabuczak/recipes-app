@@ -19,7 +19,7 @@
     transition: transform 1s;
 }
 
-img:hover {
+.img:hover {
     transform: scale(1.04);
 }
 
