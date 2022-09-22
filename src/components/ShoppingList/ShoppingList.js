@@ -38,7 +38,6 @@ const ShoppingList = () => {
         }
         setRefreshAfterDelete(true);
     }
-
     const receiveData = (data) => {
         if (data === null) {
             setListIsEmpty(true);

@@ -16,7 +16,6 @@ const Recipes = () => {
     const history = useHistory();
 
     const receiveData = (data) => {
-        //redux?
         const loadedRecipes = [];
         for (const key in data) {
             loadedRecipes.push({

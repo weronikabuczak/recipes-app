@@ -7,7 +7,6 @@
     color: black;
     margin: 0.2rem auto;
     font-size: 1.1rem;
-    background-color: #ece7e7;
-    border: #e5b8b2 1px solid;
-    box-shadow: 0 0 2px 1px #a94739;
+    background-color: #eee;
+    box-shadow: 0 0 2px 1px #cc9993;
 }

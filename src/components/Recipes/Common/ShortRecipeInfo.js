@@ -5,14 +5,13 @@ import diff2Icon from '../../../assets/2diff.png';
 import diff3Icon from '../../../assets/3diff.png';
 
 const ShortRecipeInfo = ({recipe}) => {
-
     let recipeIcon = diff1Icon;
 
     if (recipe.diff === 'Easy') {
         recipeIcon = diff1Icon;
     } else if (recipe.diff === 'Medium') {
         recipeIcon = diff2Icon;
-    } else if (recipe.diff === 'Advanced') {
+    } else if (recipe.diff === 'Hard') {
         recipeIcon = diff3Icon;
     }
 
