@@ -16,7 +16,7 @@ const NavigationBar = () => {
     return (
         <>
             <header className={classes.header}>
-              {/*<img src={logo}/>*/}
+              <img src={logo}/>
                 <NavigationBarItems setShowMenu={setShowMenu}/>
                 <CustomButton onClick={toggleMenuHandler} className={classes['menu__button']}>Menu</CustomButton>
             </header>
